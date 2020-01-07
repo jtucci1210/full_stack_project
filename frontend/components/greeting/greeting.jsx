@@ -1,4 +1,7 @@
 import React from 'react';
+import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 
 
@@ -6,14 +9,13 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <nav className="login-signup">
             <button onClick={() => openModal('login')}>Login</button>
-            &nbsp;or&nbsp;
             <button onClick={() => openModal('signup')}>Signup</button>
         </nav>
     );
     const personalGreeting = () => (
-        <hgroup className="header-group">
-            <h2 className="header-name">Hi, {currentUser.username}!</h2>
-            <button className="header-button" onClick={logout}>Log Out</button>
+        <hgroup className="header-group-logged-in">
+            <Link to="/" className="header-link"><nav>Explore</nav></Link>
+            <FontAwesomeIcon icon={faUserCircle}/>
         </hgroup>
     );
 

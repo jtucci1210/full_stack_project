@@ -1,0 +1,50 @@
+/* .header-link {
+    justify-content: left;
+} */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    background: lightgray;
+}
+
+header h1 {
+    color: red;
+    font-family: 'Pacifico', cursive;
+    padding: 10px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.login-signup button {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 10px 32px;
+  margin: 15px;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: sans-serif;
+}
+
+.header-group-logged-in {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.fa-user-circle {
+    font-size: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+

@@ -22,7 +22,7 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.action(user);
+        this.props.action(user).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -76,12 +76,15 @@ class SignupForm extends React.Component {
                         <br />
                         <label>
                             <br/>
-                                <select onChange={this.update('location')} className="signup-input">
-                                <option selected="selected" disabled="disabled">Choose a location</option>
-                                <option value={this.state.location}>San Francisco, CA</option>
-                                <option value={this.state.location}>Los Angeles, CA</option>
-                                <option value={this.state.location}>New York, NY</option>
-                                <option value={this.state.location}>Averill Park, NY</option>
+                                <select 
+                                    value={this.state.location ? this.state.location : "Choose a location"}
+                                    onChange={(e) => this.setState({location: e.target.value})} 
+                                    className="signup-input">
+                                <option value="Choose a location" disabled>Choose a location</option>
+                                <option value="San Francisco, CA">San Francisco, CA</option>
+                                <option value="Los Angeles, CA">Los Angeles, CA</option>
+                                <option value="New York, NY">New York, NY</option>
+                                <option value="Averill Park, NY">Averill Park, NY</option>
                                 </select>
                         </label>
                         <br />
