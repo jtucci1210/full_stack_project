@@ -41,46 +41,41 @@ class SignupForm extends React.Component {
         return (
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                    Welcome to Feetup!
+                    <h2>Welcome to Feetup</h2>
           <br />
-                    Please {this.props.formType} or {this.props.navLink}
-                    {this.renderErrors()}
+                    <div className="signup-errors">{this.renderErrors()}</div>
                     <div className="signup-form">
                         <br />
-                        <label>Username:
                                 <input type="text"
+                                placeholder="Choose username"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 className="signup-input"
                             />
-                        </label>
                         <br />
-                        <label>Password:
                                 <input type="password"
+                                placeholder="Enter password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="signup-input"
                             />
-                        </label>
                         <br />
-                        <label>Email:
                                 <input type="text"
+                                placeholder="Email"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="signup-input"
                             />
-                        </label>
                         <br />
-                        <label>Bio:
                                 <textarea
-                                placeholder="optional"
+                                placeholder="Bio (optional)"
                                 value={this.state.bio}
                                 onChange={this.update('bio')}
                                 className="signup-input"
                             />
-                        </label>
                         <br />
                         <label>Location:
+                            <br/>
                                 <select onChange={this.update('location')} className="signup-input">
                                 <option value={this.state.location}>San Francisco, CA</option>
                                 <option value={this.state.location}>Los Angeles, CA</option>
