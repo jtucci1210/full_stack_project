@@ -35,10 +35,20 @@ h2 {
 
 .signup-errors {
     min-height: 16px;
+
+}
+
+.signup-errors ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
 }
 
 .signup-errors li {
     list-style-type: none;
     color: red;
     font-family: sans-serif;
+    padding-bottom: 10px;
 }

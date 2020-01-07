@@ -37,8 +37,17 @@ h2 {
     min-height: 16px;
 }
 
+.login-errors ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 10px;
+}
+
 .login-errors li {
     list-style-type: none;
     color: red;
     font-family: sans-serif;
+    padding-bottom: 10px;
 }

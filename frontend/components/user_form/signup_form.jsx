@@ -8,7 +8,7 @@ class SignupForm extends React.Component {
             password: '',
             email: '',
             bio: '',
-            location: 'San Francisco, CA'
+            location: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -74,9 +74,10 @@ class SignupForm extends React.Component {
                                 className="signup-input"
                             />
                         <br />
-                        <label>Location:
+                        <label>
                             <br/>
                                 <select onChange={this.update('location')} className="signup-input">
+                                <option selected="selected" disabled="disabled">Choose a location</option>
                                 <option value={this.state.location}>San Francisco, CA</option>
                                 <option value={this.state.location}>Los Angeles, CA</option>
                                 <option value={this.state.location}>New York, NY</option>

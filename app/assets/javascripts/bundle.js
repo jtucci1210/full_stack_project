@@ -641,7 +641,7 @@ function (_React$Component) {
       password: '',
       email: '',
       bio: '',
-      location: 'San Francisco, CA'
+      location: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -707,10 +707,13 @@ function (_React$Component) {
         value: this.state.bio,
         onChange: this.update('bio'),
         className: "signup-input"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Location:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         onChange: this.update('location'),
         className: "signup-input"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        selected: "selected",
+        disabled: "disabled"
+      }, "Choose a location"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: this.state.location
       }, "San Francisco, CA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: this.state.location
