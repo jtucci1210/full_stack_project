@@ -4,9 +4,11 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './user_form/signup_form_container';
 import GreetingContainer from './greeting/greeting_container';
+import Modal from "./modal/modal";
 
 const App = () => (
     <div>
+        <Modal />
         <header>
             <Link to="/" className="header-link"><h1>FeetUp</h1></Link>
             <GreetingContainer />
