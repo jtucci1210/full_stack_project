@@ -7,7 +7,7 @@ class SignupForm extends React.Component {
             username: '',
             password: '',
             email: '',
-            bio: 'optional',
+            bio: '',
             location: 'San Francisco, CA'
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -73,10 +73,20 @@ class SignupForm extends React.Component {
                         <br />
                         <label>Bio:
                                 <textarea
+                                placeholder="optional"
                                 value={this.state.bio}
                                 onChange={this.update('bio')}
                                 className="signup-input"
                             />
+                        </label>
+                        <br />
+                        <label>Location:
+                                <select onChange={this.update('location')} className="signup-input">
+                                <option value={this.state.location}>San Francisco, CA</option>
+                                <option value={this.state.location}>Los Angeles, CA</option>
+                                <option value={this.state.location}>New York, NY</option>
+                                <option value={this.state.location}>Averill Park, NY</option>
+                                </select>
                         </label>
                         <br />
                         <input className="signup-submit" type="submit" value={this.props.formType} />

@@ -513,7 +513,7 @@ function (_React$Component) {
       username: '',
       password: '',
       email: '',
-      bio: 'optional',
+      bio: '',
       location: 'San Francisco, CA'
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -571,10 +571,22 @@ function (_React$Component) {
         onChange: this.update('email'),
         className: "signup-input"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Bio:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
+        placeholder: "optional",
         value: this.state.bio,
         onChange: this.update('bio'),
         className: "signup-input"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Location:", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        onChange: this.update('location'),
+        className: "signup-input"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: this.state.location
+      }, "San Francisco, CA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: this.state.location
+      }, "Los Angeles, CA"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: this.state.location
+      }, "New York, NY"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+        value: this.state.location
+      }, "Averill Park, NY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-submit",
         type: "submit",
         value: this.props.formType
@@ -648,13 +660,31 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _frontend_store_store__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../frontend/store/store */ "./frontend/store/store.js");
 /* harmony import */ var _frontend_components_root__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../frontend/components/root */ "./frontend/components/root.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
 
 document.addEventListener("DOMContentLoaded", function () {
   var root = document.getElementById("root");
-  var store = Object(_frontend_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(); //Testing Start
+  var store;
+
+  if (window.currentUser) {
+    var preloadedState = {
+      session: {
+        id: window.currentUser.id
+      },
+      entities: {
+        users: _defineProperty({}, window.currentUser.id, window.currentUser)
+      }
+    };
+    store = Object(_frontend_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = Object(_frontend_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  } //Testing Start
+
 
   window.getState = store.getState;
   window.dispatch = store.dispatch; //Testing End
