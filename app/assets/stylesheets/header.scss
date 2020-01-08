@@ -1,6 +1,3 @@
-/* .header-link {
-    justify-content: left;
-} */
 
 header {
     display: flex;
@@ -30,6 +27,8 @@ header a {
   font-weight: bold;
   font-size: 12px;
   font-family: sans-serif;
+//   display: flex;
+  justify-content: center;
 }
 
 .header-group-logged-in {
@@ -40,15 +39,10 @@ header a {
     font-size: 14px;
 }
 
-.fa-user-circle {
-    font-size: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
 .header-link-explore {
     text-decoration: none;
     color: black;
+    padding-right: 10px;
 }
 
 

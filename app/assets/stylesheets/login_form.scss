@@ -21,7 +21,12 @@ h2 {
     padding: 10px;
 }
 
-.session-submit {
+.session-buttons-div {
+    display: flex;
+    align-items: center;
+}
+
+.session-submit, .login-demo-user {
   background-color: red;
   border: none;
   border-radius: 5px;
@@ -31,6 +36,9 @@ h2 {
   margin: 40px 2px;
   cursor: pointer;
   font-weight: bold;
+  width: 100px;
+  height: 30px;
+  font-size: 12px;
 }
 
 .login-errors {
@@ -51,3 +59,4 @@ h2 {
     font-family: sans-serif;
     padding-bottom: 10px;
 }
+
