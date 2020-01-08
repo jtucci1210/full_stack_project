@@ -270,7 +270,7 @@ var Greeting = function Greeting(_ref) {
       className: "header-group-logged-in"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
       to: "/",
-      className: "header-link"
+      className: "header-link-explore"
     }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", null, "Explore")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_2__["FontAwesomeIcon"], {
       icon: _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__["faUserCircle"]
     }));

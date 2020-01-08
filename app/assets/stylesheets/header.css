@@ -46,5 +46,9 @@ header a {
     padding-right: 15px;
 }
 
+.header-link-explore {
+    text-decoration: none;
+    color: black;
+}
 
 

@@ -14,7 +14,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
     );
     const personalGreeting = () => (
         <hgroup className="header-group-logged-in">
-            <Link to="/" className="header-link"><nav>Explore</nav></Link>
+            <Link to="/" className="header-link-explore"><nav>Explore</nav></Link>
             <FontAwesomeIcon icon={faUserCircle}/>
         </hgroup>
     );
