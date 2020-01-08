@@ -26,15 +26,12 @@ class LoginForm extends React.Component {
     }
 
     handleDemo(e) {
-        this.demoUser();
-        this.props.action(this.state).then(this.props.closeModal);
-    }
-
-    demoUser() {
-        this.setState({
+        let demoUser = {
             email: "kittymuffin@gmail.com",
             password: "123456"
-        })
+        };
+        this.setState(demoUser)
+        this.props.action(demoUser).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -74,7 +71,7 @@ class LoginForm extends React.Component {
                         <br />
                         <div className="session-buttons-div">
                             <input className="session-submit" type="submit" value={this.props.formType} />
-                            <button onClick={this.handleDemo} className="login-demo-user">Demo</button>
+                            <input onClick={this.handleDemo} className="login-demo-user" type="submit" value="Demo" />
                         </div>
                     </div>
                 </form>
