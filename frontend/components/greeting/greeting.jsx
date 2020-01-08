@@ -21,7 +21,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                     <FontAwesomeIcon className="profile-icon" icon={faUserCircle} />
                     <div id="myDropdown" className="dropdown-content">
                             <Link to={`/users/${currentUser.id}`}>Profile</Link>
-                            <Link onClick={() => logout()} to="/logout">Logout</Link>
+                            <Link onClick={() => logout()} to="/">Logout</Link>
                     </div>
                 </div> 
             </div>
