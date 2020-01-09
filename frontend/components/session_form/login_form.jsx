@@ -27,7 +27,7 @@ class LoginForm extends React.Component {
 
     handleDemo(e) {
         let demoUser = {
-            email: "kittymuffin@gmail.com",
+            email: "demo@gmail.com",
             password: "123456"
         };
         this.setState(demoUser)

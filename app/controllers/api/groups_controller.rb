@@ -18,4 +18,24 @@ class Api::GroupsController < ApplicationController
         render "api/groups/index"
     end
 
+    def add_group_membership
+        @membership = Membership.new(user_id: current_user.id, group_id: params[:group_id])
+        if @membership.save
+            render "api/groups/show"
+        else
+            render json: @group.errors.full_messages, status: 404
+        end
+    end
+
+    def remove_group_membership
+        @membership = Membership.find_by(
+            user_id: current_user.id, group_id: params[:group_id]
+        )
+        if @membership.destroy
+            render json: {}
+        else
+            render plain: "You are not a member of this group."
+        end
+    end
+
 end

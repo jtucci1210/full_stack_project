@@ -4,9 +4,12 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do 
     resources :users, except: [:new, :edit] do 
-      resources :groups, only: [:index]
+      resources :groups, only: [:index, :remove_group_membership]
     end
-    resources :groups, only: [:index, :show]
+    resources :groups, only: [:index, :show] do 
+      post :add, to: 'groups#add_group_membership', as: 'add'
+      delete :remove, to: 'groups#remove_group_membership', as: 'remove'
+    end
     resource :session, only: [:create, :destroy]
   end
 end
