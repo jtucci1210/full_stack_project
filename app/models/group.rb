@@ -14,14 +14,14 @@
 class Group < ApplicationRecord
     validates :location, :description, presence: true
     validates :title, presence: true, uniqueness: true
-    validates :private, presence: true, inclusion: { in: [true, false] }
+    validates :private, inclusion: { in: [true, false] }
 
+    
+    has_many :memberships,
+    foreign_key: :group_id,
+    class_name: :Membership
+    
     has_many :users,
         through: :memberships,
         source: :user
-    
-    has_many :memberships,
-        foreign_key: :group_id,
-        class_name: :Membership
-
 end
