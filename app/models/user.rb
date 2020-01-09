@@ -10,6 +10,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  location        :string           not null
 #
 
 class User < ApplicationRecord
@@ -21,6 +22,9 @@ class User < ApplicationRecord
 
 
   after_initialize :ensure_session_token
+
+  # belongs_to :group,
+    # foreign_key: :
 
   # Class method for finding a user ONLY if we have the correct username and password
   def self.find_by_credentials(email, password)
