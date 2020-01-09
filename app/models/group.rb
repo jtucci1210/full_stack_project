@@ -16,7 +16,12 @@ class Group < ApplicationRecord
     validates :title, presence: true, uniqueness: true
     validates :private, presence: true, inclusion: { in: [true, false] }
 
-    # has_many :users,
-    #     foreign_key: :user_id,
-    #     class_name: :User
+    has_many :users,
+        through: :memberships,
+        source: :user
+    
+    has_many :memberships,
+        foreign_key: :group_id,
+        class_name: :Membership
+
 end
