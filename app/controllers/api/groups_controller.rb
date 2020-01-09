@@ -10,7 +10,11 @@ class Api::GroupsController < ApplicationController
     end
 
     def index
-        @groups = Group.all
+        if params[:user_id]
+            @groups = current_user.groups
+        else 
+            @groups = Group.all
+        end
         render "api/groups/index"
     end
 
