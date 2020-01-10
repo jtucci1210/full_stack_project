@@ -1,4 +1,4 @@
-json.group do
+json.groups do
     json.set! @group.id do
         json.extract! @group, :id, :title, :description, :created_at
     end
