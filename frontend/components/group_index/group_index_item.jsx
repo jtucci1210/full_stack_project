@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-const UserGroupIndexItem = ({ group }) => {
+const GroupIndexItem = ({group}) => {
     return (
         <div>
             <Link to={`/groups/${group.id}`}>{group.title} {group.members.length} Members</Link>
@@ -10,4 +9,4 @@ const UserGroupIndexItem = ({ group }) => {
     )
 }
 
-export default UserGroupIndexItem;
+export default GroupIndexItem

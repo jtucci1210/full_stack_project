@@ -19,7 +19,6 @@ class Api::GroupsController < ApplicationController
     end
 
     def add_group_membership
-        debugger
         @membership = Membership.new(user_id: current_user.id, group_id: params[:group_id])
         if @membership.save!
             render "api/groups/show"

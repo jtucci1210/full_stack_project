@@ -15,9 +15,9 @@ const App = () => (
             <Link to="/" className="header-link"><h1>FeetUp</h1></Link>
             <GreetingContainer />
         </header>
-        <Switch>
             <ProtectedRoute path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute path="/" component={GroupIndexContainer} />
+        <Switch>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>
