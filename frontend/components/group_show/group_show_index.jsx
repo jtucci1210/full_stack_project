@@ -10,11 +10,11 @@ class GroupShowIndex extends React.Component {
     }
 
     render () {
-        const { group, members } = this.props;
+        const { group, members, currentUser } = this.props;
         if (!group) return null;
         return (
             <div>
-                <GroupShowIndexItem group={group} members={members}/>
+                <GroupShowIndexItem group={group} members={members} currentUser={currentUser}/>
             </div>
         )
     }
