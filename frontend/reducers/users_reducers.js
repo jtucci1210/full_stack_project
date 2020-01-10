@@ -8,7 +8,7 @@ const usersReducer = (state = {}, action) => {
         case RECEIVE_CURRENT_USER:
             return Object.assign({}, state, action.currentUser.users );
         case RECEIVE_GROUP:
-            return Object.assign({}, state, { [action.group.id]: action.group.users });
+            return action.group.users;
         default:
             return state;
     }
