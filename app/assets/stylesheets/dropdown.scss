@@ -4,6 +4,7 @@
   font-size: 16px;
   border: none;
   cursor: pointer;
+  z-index: 20;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -39,6 +40,7 @@
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
 
-.profile-icon {
+.fa-user-circle {
     font-size: 35px;
+    z-index: 15;
 }

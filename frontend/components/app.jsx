@@ -5,6 +5,8 @@ import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './user_form/signup_form_container';
 import GreetingContainer from './greeting/greeting_container';
 import Modal from "./modal/modal";
+import UserGroupsIndexContainer from "./user_groups/user_groups_container";
+import GroupIndexContainer from "./group_index/group_index_container";
 
 const App = () => (
     <div>
@@ -14,7 +16,8 @@ const App = () => (
             <GreetingContainer />
         </header>
         <Switch>
-           
+            <ProtectedRoute path="/" component={UserGroupsIndexContainer} />
+            <ProtectedRoute path="/" component={GroupIndexContainer} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>

@@ -8,6 +8,7 @@ export const dropDownList = () => {
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
+    // ERROR WITH DROPDOWN IS IN LINE
     if (!event.target.matches('.dropbtn')) {
         const dropdowns = document.getElementsByClassName("dropdown-content");
         for (let i = 0; i < dropdowns.length; i++) {

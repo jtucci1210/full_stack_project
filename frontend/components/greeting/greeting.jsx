@@ -1,6 +1,4 @@
 import React from 'react';
-import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import { dropDownList } from '../dropdown/dropdown';
 
@@ -18,7 +16,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
             <Link to="/" className="header-link-explore"><nav>Explore</nav></Link>
             <div className="dropdown">
                 <div onClick={() => dropDownList()} className="dropbtn"> 
-                    <FontAwesomeIcon className="profile-icon" icon={faUserCircle} />
+                    <a className="fas fa-user-circle"></a>
                     <div id="myDropdown" className="dropdown-content">
                             <Link to={`/users/${currentUser.id}`}>Profile</Link>
                             <Link onClick={() => logout()} to="/">Logout</Link>
