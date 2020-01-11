@@ -15,6 +15,10 @@ class GroupShowIndex extends React.Component {
         return (
             <div>
                 <GroupShowIndexItem group={group} members={members} currentUser={currentUser}/>
+                {(this.props.match.path === ("/groups/:groupId")) ?
+                    <p className="group-show-page-description">{group.description}</p> :
+                    null
+                }
             </div>
         )
     }

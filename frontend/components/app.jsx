@@ -8,6 +8,7 @@ import Modal from "./modal/modal";
 import UserGroupsIndexContainer from "./user_groups/user_groups_container";
 import GroupIndexContainer from "./group_index/group_index_container";
 import GroupShowContainer from "./group_show/group_show_container";
+import Members from '../components/group_show/members';
 
 const App = () => (
     <div>
@@ -17,10 +18,11 @@ const App = () => (
             <GreetingContainer />
         </header>
         <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
+        <ProtectedRoute path="/groups/:groupId" component={GroupShowContainer} />
         <Switch>
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
             <ProtectedRoute exact path="/groups" component={GroupIndexContainer} />
-            <ProtectedRoute exact path="/groups/:groupId" component={GroupShowContainer} />
+            <ProtectedRoute path="/groups/:groupId/members" component={Members} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>

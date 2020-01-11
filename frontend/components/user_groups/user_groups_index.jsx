@@ -11,15 +11,15 @@ class UserGroupsIndex extends React.Component {
     }
 
     render () {
-        const { currentUser } = this.props;
+        const { currentUserId, members } = this.props;
         if (!this.props.groups) return null;
         return (
             <div className="user-groups-index-div" >
                 <h4 className="user-groups-index-header">YOUR GROUPS</h4>
                 {
                     this.props.groups.map(group => (
-                        group.members.includes(currentUser.id) ? (
-                        <UserGroupIndexItem key={group.id} group={group}/>
+                        members.includes(currentUserId) ? (
+                        <UserGroupIndexItem key={group.id} group={group} members={members}/>
                         ) : null
                     ))
                 }

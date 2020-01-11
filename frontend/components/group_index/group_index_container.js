@@ -4,7 +4,8 @@ import { fetchAllGroups } from '../../actions/group_actions';
 
 
 const mapStateToProps = (state) => ({
-    groups: Object.values(state.entities.groups) 
+    groups: Object.values(state.entities.groups),
+    members: Object.keys(state.entities.users) 
 })
 
 const mapDispatchToProps = (dispatch) => ({
