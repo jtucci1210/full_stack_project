@@ -1,0 +1,52 @@
+.user-groups-infobar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 170px;
+    background-color:hsl(0, 0%, 5%);
+    font-family: sans-serif;
+    color: white;
+}
+
+.user-groups-index, .groups-index {
+    margin: 10px;
+    max-width: 1000px;
+
+}
+
+.user-groups-index-div, .groups-index-div {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    a {
+        text-decoration: none;
+        color:lightgray;
+        font-size: 13px;
+        font-family: sans-serif;
+        h5 {
+            font-size: 20px;
+            text-shadow: 1px 1px 0 rgba(0,0,0,.26);
+            color: white;
+        }
+    }
+}
+
+.user-groups-index-item, .group-index-item {
+    height: 180px;
+    width: 300px;
+    background-color: grey;
+    margin: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    border-radius: 3px;
+    
+}
+
+h4 {
+    font-family: sans-serif;
+    font-size: 13px;
+}

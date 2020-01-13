@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const GroupShowIndexItem = ({group, members, currentUser}) => {
+const GroupShowIndexItem = ({group, members, currentUser, createMembership, deleteMembership }) => {
     const inGroup = members.map(member => (member.id)).includes(currentUser)
     return (
         <div>
-            <img src="" alt=""/>
-            <div>
-                <h2 className="group-show-page-title">{group.title}</h2>
-                <ul className="group-show-page-details">
-                    <li>{group.location}</li>
-                    <li>{group.createdAt}</li>
-                    <li>{members.length} Members</li>
-                    <li>{group.private ? "Private Group" : "Public Group"}</li>
-                </ul>
+            <div className="group-show-page-div">
+                <img className="group-show-page-profile-image" src="" alt=""/>
+                <div className="group-show-page-details">
+                    <h2 className="group-show-page-title">{group.title}</h2>
+                    <ul >
+                        <li><i className="fas fa-map-marker-alt"></i> {group.location}</li>
+                        <li><i className="fas fa-info-circle"></i> Formed {group.createdAt}</li>
+                        <li><i className="fas fa-users"></i> {members.length} Members</li>
+                        <li>{group.private ? <i className="fas fa-lock"> Private Group</i> : <i className="fas fa-unlock"> Public Group</i> }</li>
+                    </ul>
+                </div>
             </div>
             <ul className="group-show-page-tabs">
                 <li>
@@ -26,12 +28,12 @@ const GroupShowIndexItem = ({group, members, currentUser}) => {
                     <Link to={`/groups/${group.id}/members`}>Members</Link> 
                 </li>
                 <li>
-                    <button>
-                        { inGroup ? "You're a Member" : "Join Group"}
+                    <button onClick={inGroup ? () => deleteMembership(group.id) : () => createMembership(group.id)}>
+                        { inGroup ? "Leave Group" : "Join Group"}
                     </button>
                 </li>
             </ul>
-            {/* <div>
+            {/* <div> FIGURE OUT HOW TO ONLY MAKE THIS SHOW ON ABOUT
                 <p className="group-show-page-description">{group.description}</p>
             </div> */}
         </div>

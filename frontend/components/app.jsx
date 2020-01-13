@@ -17,11 +17,11 @@ const App = () => (
             <Link to="/" className="header-link"><h1>FeetUp</h1></Link>
             <GreetingContainer />
         </header>
-        <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
-        <ProtectedRoute path="/groups/:groupId" component={GroupShowContainer} />
-        <Switch>
+            <ProtectedRoute path="/groups/:groupId" component={GroupShowContainer} />
+            <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
-            <ProtectedRoute exact path="/groups" component={GroupIndexContainer} />
+        <Switch>
+            {/* <ProtectedRoute exact path="/groups" component={GroupIndexContainer} /> */}
             <ProtectedRoute path="/groups/:groupId/members" component={Members} />
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />

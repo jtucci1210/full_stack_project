@@ -1,6 +1,5 @@
 import React from 'react';
 import UserGroupIndexItem from './user_groups_index_item'
-import { fetchAllGroups } from '../../actions/group_actions';
 
 class UserGroupsIndex extends React.Component {
     constructor(props) {
@@ -11,18 +10,30 @@ class UserGroupsIndex extends React.Component {
     }
 
     render () {
-        const { currentUserId, members } = this.props;
-        if (!this.props.groups) return null;
+        const { currentUserId, groups } = this.props;
+        if (!groups) return null;
+        // debugger;
+        const userGroups = groups.filter(group => (
+            group.members.includes(currentUserId)
+        ))
         return (
-            <div className="user-groups-index-div" >
-                <h4 className="user-groups-index-header">YOUR GROUPS</h4>
-                {
-                    this.props.groups.map(group => (
-                        members.includes(currentUserId) ? (
-                        <UserGroupIndexItem key={group.id} group={group} members={members}/>
-                        ) : null
-                    ))
-                }
+            <div>
+                <div className="user-groups-infobar">
+                    <h2>Find your next event</h2>
+                    <span>{"__"} events in your groups</span>
+                    <span>{"__"} events near you</span>
+                </div>
+                <div className="user-groups-index">
+                    <h4 className="user-groups-index-header">YOUR GROUPS</h4>
+                    <div className="user-groups-index-div" >
+                        
+                        { userGroups ?
+                            userGroups.map(group => (
+                                <UserGroupIndexItem key={group.id} group={group} />
+                            )) : null
+                        }
+                    </div>
+                </div>
             </div>
         )
     }
