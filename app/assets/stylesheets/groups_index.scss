@@ -7,18 +7,26 @@
     background-color:hsl(0, 0%, 5%);
     font-family: sans-serif;
     color: white;
+    h2 {
+        font-size: 34px;
+    }
+}
+.groups-container, .user-groups-container {
+    display: flex;
+    justify-content: center;
 }
 
 .user-groups-index, .groups-index {
     margin: 10px;
     max-width: 1000px;
+    min-width: 930px;
 
 }
 
 .user-groups-index-div, .groups-index-div {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 930px;
     a {
         text-decoration: none;
         color:lightgray;

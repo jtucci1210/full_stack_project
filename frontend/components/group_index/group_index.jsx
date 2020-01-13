@@ -13,14 +13,16 @@ class GroupIndex extends React.Component {
         const { groups } = this.props;
         if (!groups) return null;
         return (
-            <div className="groups-index">
-                <h4 className="groups-index-header">ALL GROUPS</h4>
-                <div className="groups-index-div">
-                    {groups.map(group => (
-                        <GroupIndexItem key={group.id} group={group} />
-                    ))
-                    }
-                </div>
+            <div className="groups-container">
+                    <div className="groups-index">
+                        <h4 className="groups-index-header">ALL GROUPS</h4>
+                        <div className="groups-index-div">
+                            {groups.map(group => (
+                                <GroupIndexItem key={group.id} group={group} />
+                            ))
+                            }
+                        </div>
+                    </div>
             </div>
         )
     }

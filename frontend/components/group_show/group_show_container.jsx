@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import GroupShowIndex from './group_show_index';
 import { fetchGroup } from '../../actions/group_actions';
-import { createMembership, deleteMembership } from "../../util/groups_api_util";
+import { createMembership, deleteMembership } from "../../actions/group_actions";
 
 
 const mapStateToProps = (state, ownProps ) => ({

@@ -18,7 +18,7 @@ const Greeting = ({ currentUser, logout, openModal }) => {
                 <div onClick={() => dropDownList()} className="dropbtn"> 
                     <a className="fas fa-user-circle"></a>
                     <div id="myDropdown" className="dropdown-content">
-                            <Link to={`/users/${currentUser.id}`}>Profile</Link>
+                            <Link to={`/users/${currentUser}`}>Profile</Link>
                             <Link onClick={() => logout()} to="/">Logout</Link>
                     </div>
                 </div> 

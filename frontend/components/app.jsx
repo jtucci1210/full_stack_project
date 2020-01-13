@@ -20,12 +20,6 @@ const App = () => (
             <ProtectedRoute path="/groups/:groupId" component={GroupShowContainer} />
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
-        <Switch>
-            {/* <ProtectedRoute exact path="/groups" component={GroupIndexContainer} /> */}
-            <ProtectedRoute path="/groups/:groupId/members" component={Members} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        </Switch>
     </div>
 );
 

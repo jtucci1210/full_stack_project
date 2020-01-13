@@ -5,7 +5,10 @@ const Members = ({members}) => {
     return (
         <div>
             {members.map(member => (
-                <li key={member.id}>{member.username}</li>
+                <li key={member.id}>
+                    <h4 className="member-username-header">{member.username}</h4>
+                    <span className="member-join-date">{member.createdAt}</span>
+                </li>
             ))}
         </div>
     )

@@ -37,5 +37,5 @@ export const createMembership = (id) => dispatch => (
 
 export const deleteMembership = (id) => dispatch => (
     groupAPIUtil.deleteMembership(id)
-        .then(() => dispatch(receiveGroup(group)))
+        .then((group) => dispatch(receiveGroup(group)))
 )
