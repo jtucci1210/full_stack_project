@@ -42,11 +42,11 @@ class GroupShowIndexItem extends React.Component {
                         </button>
                     </li>
                 </ul>
-                <div>
-                    <Route exact path="/groups/:groupId" 
-                    render={(props) => <p className="group-show-page-description">
-                        {group.description}</p>} />
-                </div>
+                
+                <Route exact path="/groups/:groupId" 
+                    render={(props) => <div className="group-about">What we're about<p className="group-show-page-description">
+                    {group.description}</p></div>} />
+                
             </div>
         )
     }
