@@ -69,6 +69,7 @@
     font-size: 20px;
     font-family: sans-serif;
     font-weight: bold;
+    
     .group-show-page-description {
         font-size: 16px;
         font-weight: normal;
@@ -77,6 +78,7 @@
         border: 1px solid lightgrey;
         border-radius: 5px;
         padding: 40px;
+        box-shadow: 5px 5px 18px red;
     }
 }
 
@@ -104,6 +106,7 @@
         border-radius: 5px;
         background-color: #f6f7f8;
         width: 230px;
+        box-shadow: 5px 5px 18px red;
     }
 }
 

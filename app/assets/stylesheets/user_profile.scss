@@ -11,6 +11,7 @@
     border-radius: 5px;
     background-color: #f6f7f8;
     max-width: 1000px;
+    box-shadow: 5px 5px 18px red;
 
     .fa-user-circle {
         font-size: 100px;
@@ -27,9 +28,9 @@
             padding-bottom: 20px;
         }
 
-        .profile-member-details {
+        // .profile-member-details {
 
-        }
+        // }
         h2 {
             font-size: 28px;
             padding-bottom: 10px;

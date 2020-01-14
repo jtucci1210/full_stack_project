@@ -1,6 +1,7 @@
 json.users do
     json.set! @user.id do
         json.extract! @user, :id, :username, :email, :bio, :location
+        json.created_at @user.created_at.to_date.to_s
     end
 end
 json.groups do
