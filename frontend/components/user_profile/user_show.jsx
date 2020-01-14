@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 class UserShow extends React.Component {
     constructor(props) {
@@ -10,11 +10,9 @@ class UserShow extends React.Component {
     }
     
     render () {
-        // debugger;
         const { groups, currentUser } = this.props;
         if (!groups || !currentUser) return null;
         const groupCount = groups.filter(group => (group.members).includes(currentUser.id))
-        // debugger;
         return (
             <div className="profile-page">
                 <div className="profile-box">
@@ -32,18 +30,18 @@ class UserShow extends React.Component {
                                 <span>{currentUser.createdAt}</span>
                             </div>
                         </div>
-                        <p className="profile-bio">
-                            {currentUser.bio ? currentUser.bio : "No Bio Provided"}
-                        </p>
+                        <div className="profile-bio">
+                            <h4>Bio</h4>
+                            {currentUser.bio ? currentUser.bio : "No Bio provided"}
+                        </div>
                         <h2 className="profile-member-groups-header">
                             Member of {groupCount.length} FeetUp Groups
                         </h2>
                         <div className="profile-member-groups-div">
                             {groupCount.map(group => (
-                                <div key={group.id}>
-                                    {group.title}
-                                    <br/>
-                                    Member
+                                <div className="profile-member-groups-items" key={group.id}>
+                                    <Link to={`/groups/${group.id}`}>{group.title}</Link>
+                                    <span className="member-span">Member</span> 
                                 </div>
                             ))}
                         </div>
