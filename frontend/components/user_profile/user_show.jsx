@@ -10,6 +10,7 @@ class UserShow extends React.Component {
     }
     
     render () {
+        // debugger;
         const { groups, currentUser } = this.props;
         if (!groups || !currentUser) return null;
         const groupCount = groups.filter(group => (group.members).includes(currentUser.id))
