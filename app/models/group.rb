@@ -24,4 +24,6 @@ class Group < ApplicationRecord
     has_many :users,
         through: :memberships,
         source: :user
+    
+    has_one_attached :photo
 end

@@ -10,6 +10,7 @@ import GroupIndexContainer from "./group_index/group_index_container";
 import GroupShowContainer from "./group_show/group_show_container";
 import Members from '../components/group_show/members';
 import UserShowContainer from './user_profile/user_show_container';
+import Splash from './splash/splash';
 
 const App = () => (
     <div>
@@ -22,6 +23,7 @@ const App = () => (
             <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
+            <Route exact path="/" component={Splash} />
     </div>
 );
 

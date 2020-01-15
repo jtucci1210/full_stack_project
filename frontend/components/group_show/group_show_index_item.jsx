@@ -15,7 +15,7 @@ class GroupShowIndexItem extends React.Component {
         return (
             <div>
                 <div className="group-show-page-div">
-                    <img className="group-show-page-profile-image" src="" alt=""/>
+                    <img className="group-show-page-profile-image" src={group.photoUrl} alt=""/>
                     <div className="group-show-page-details">
                         <h2 className="group-show-page-title">{group.title}</h2>
                         <ul >
