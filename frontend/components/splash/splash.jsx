@@ -12,7 +12,7 @@ class Splash extends React.Component {
         return (
             <div>
                 <div className="splash-image-box">
-                    <img src="" alt=""/>
+                    <img className="splash-image" src="https://feetup-seeds.s3-us-west-1.amazonaws.com/splash_image.jpg" alt=""/>
                     <div className="splash-image-box-contents">
                         <span className="splash-image-box-header">
                             Outside is scary, stay in
