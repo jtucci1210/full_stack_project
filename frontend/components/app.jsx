@@ -8,9 +8,8 @@ import Modal from "./modal/modal";
 import UserGroupsIndexContainer from "./user_groups/user_groups_container";
 import GroupIndexContainer from "./group_index/group_index_container";
 import GroupShowContainer from "./group_show/group_show_container";
-import Members from '../components/group_show/members';
 import UserShowContainer from './user_profile/user_show_container';
-import Splash from './splash/splash';
+import SplashContainer from './splash/splash_container';
 
 const App = () => (
     <div>
@@ -23,7 +22,7 @@ const App = () => (
             <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
-            <UnProtectedRoute exact path="/" component={Splash} />
+            <UnProtectedRoute exact path="/" component={SplashContainer} />
     </div>
 );
 
