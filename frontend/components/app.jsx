@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Link, Switch, HashRouter, Redirect } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute, UnProtectedRoute } from '../util/route_util';
 import LoginFormContainer from './session_form/login_form_container';
 import SignupFormContainer from './user_form/signup_form_container';
 import GreetingContainer from './greeting/greeting_container';
@@ -23,7 +23,7 @@ const App = () => (
             <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
-            <Route exact path="/" component={Splash} />
+            <UnProtectedRoute exact path="/" component={Splash} />
     </div>
 );
 
