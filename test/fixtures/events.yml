@@ -13,6 +13,7 @@
 #  cost           :string           not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  date           :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

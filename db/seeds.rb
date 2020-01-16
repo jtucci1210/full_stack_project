@@ -12,6 +12,8 @@ ApplicationRecord.transaction do
     User.destroy_all
     Group.destroy_all
     Membership.destroy_all
+    Event.destroy_all
+    Rsvp.destroy_all
 
     require 'open-uri'
 
@@ -44,7 +46,6 @@ ApplicationRecord.transaction do
     group5 = Group.create({title:"W.O.W. together", location:"San Francisco, CA", description:"LAN parties and wow together", private: false})
     group5.photo.attach(io: file5, filename: 'computer_games.jpg')
 
-
     Membership.create({ user_id: user1.id, group_id: group1.id })
     Membership.create({ user_id: user1.id, group_id: group2.id })
     Membership.create({ user_id: user1.id, group_id: group3.id })
@@ -53,7 +54,30 @@ ApplicationRecord.transaction do
     Membership.create({ user_id: user2.id, group_id: group1.id })
     Membership.create({ user_id: user2.id, group_id: group2.id })
     Membership.create({ user_id: user3.id, group_id: group1.id })
+    Membership.create({ user_id: user3.id, group_id: group4.id })
     Membership.create({ user_id: user4.id, group_id: group4.id })
+    Membership.create({ user_id: user4.id, group_id: group1.id })
     Membership.create({ user_id: user5.id, group_id: group5.id })
+    Membership.create({ user_id: user5.id, group_id: group3.id })
+    Membership.create({ user_id: user7.id, group_id: group3.id })
+    
+    event1 = Event.create({name: "Catan championship", group_id: group4.id, creator_id: user3.id, description: "Catan-athon until you can't stand the sight of another hextile. Friendships will be made and ruined. Yay!", 
+        venue_location: "Eddies house", start_time: "6:00pm", end_time: "10:00pm", cost: "Free", date: "2021-02-18"})
+    event2 = Event.create({name: "The Witcher marathon", group_id: group1.id, creator_id: user4.id, description: "I have popcorn, I have wine, I have blankets. Let's get this Witcher marathon on the role.", 
+        venue_location: "Princess's Palace", start_time: "4:00pm", end_time: "11:00pm", cost: "Free", date: "2021-06-17"})
+    event3 = Event.create({name: "Cucumber Peels and Shopping Deals", group_id: group3.id, creator_id: user7.id, description: "Let's get together and binge order discount home spa kits on amazon while we try out some new cucumber face masks.", 
+        venue_location: "Karen's house", start_time: "11:00am", end_time: "4:00pm", cost: "$5", date: "2021-01-10"})
+    
+    Rsvp.create({ user_id: user1.id, event_id: event1.id })
+    Rsvp.create({ user_id: user1.id, event_id: event2.id })
+    Rsvp.create({ user_id: user1.id, event_id: event3.id })
+    Rsvp.create({ user_id: user2.id, event_id: event2.id })
+    Rsvp.create({ user_id: user3.id, event_id: event1.id })
+    Rsvp.create({ user_id: user3.id, event_id: event1.id })
+    Rsvp.create({ user_id: user3.id, event_id: event2.id })
+    Rsvp.create({ user_id: user4.id, event_id: event2.id })
+    Rsvp.create({ user_id: user5.id, event_id: event3.id })
+    Rsvp.create({ user_id: user7.id, event_id: event3.id })
+    
 
 end

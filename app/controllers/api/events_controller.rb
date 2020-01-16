@@ -44,9 +44,10 @@ class Api::EventsController < ApplicationController
             @group = Group.find_by(id: params[:group_id])
             @events = @group.events
         when params[:user_id]
-            @events = current_user.events
+            @user = User.find_by(id: params[:user_id])
+            @events = @user.events
         else
-            @events = Events.all 
+            @events = Event.all 
         end
             render "api/events/index" 
     end
@@ -74,6 +75,6 @@ class Api::EventsController < ApplicationController
     private
 
     def event_params
-        params.require(:event).permit(:name, :description, :venue_location, :start_time, :end_time, :cost)
+        params.require(:event).permit(:name, :date, :description, :venue_location, :start_time, :end_time, :cost, :creator_id, :group_id)
     end
 end
