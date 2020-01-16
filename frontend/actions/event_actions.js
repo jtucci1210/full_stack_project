@@ -1,0 +1,56 @@
+import * as eventAPIUtil from '../util/events_api_util';
+
+export const RECEIVE_ALL_EVENTS = 'RECEIVE_ALL_EVENTS';
+export const RECEIVE_EVENT = 'RECEIVE_EVENT';
+export const RECEIVE_EVENT_ERRORS = 'RECEIVE_EVENT_ERRORS';
+
+export const receiveAllEvents = (payload) => ({
+    type: RECEIVE_ALL_EVENTS,
+    payload: payload
+}) 
+
+export const receiveEventErrors = (errors) => ({
+    type: RECEIVE_EVENT_ERRORS,
+    errors
+}) 
+
+export const receiveEvent = (payload) => ({
+    type: RECEIVE_EVENT,
+    payload: payload
+}) 
+
+export const fetchAllEvents = () => dispatch => (
+    eventAPIUtil.fetchAllEvents()
+        .then(payload => dispatchEvent(receiveAllEvents(payload)))
+)
+
+export const fetchAllUserEvents = (userId) => dispatch => (
+    eventAPIUtil.fetchAllUserEvents(userId)
+        .then(payload => dispatchEvent(receiveAllEvents(payload)))
+)
+
+export const fetchAllGroupEvents = (groupId) => dispatch => (
+    eventAPIUtil.fetchAllGroupEvents(groupId)
+        .then(payload => dispatchEvent(receiveAllEvents(payload)))
+)
+
+export const createRsvp = (eventId) => dispatch => (
+    eventAPIUtil.createRsvp(eventId)
+        .then(event => dispatch(receiveEvent(event)))
+)
+
+export const deleteRsvp = (eventId) => dispatch => (
+    eventAPIUtil.deleteRsvp(eventId)
+        .then(event => dispatch(receiveEvent(event)))
+)
+
+//delete event renders the group show page
+export const deleteEvent = (eventId) => dispatch => (
+    eventAPIUtil.deleteEvent(eventId)
+        .then(group => dispatch(receiveEvent(group)))
+)
+
+export const createEvent = (data) => dispatch => (
+    eventAPIUtil.createEvent(data)
+        .then(payload => dispatch(receiveEvent(payload)))
+)

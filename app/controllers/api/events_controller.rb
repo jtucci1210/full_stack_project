@@ -32,6 +32,7 @@ class Api::EventsController < ApplicationController
     def destroy
         @event = Event.find(params[:id])
         if @event.destroy
+            @group = @event.group
             render "api/groups/show"
         else
             render plain: "You can not delete this event"
