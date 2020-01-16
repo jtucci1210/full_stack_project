@@ -6,11 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
 ApplicationRecord.transaction do 
 
     User.destroy_all
     Group.destroy_all
     Membership.destroy_all
+
+    require 'open-uri'
 
     user1 = User.create({username:"Demo", password: 123456, email:"demo@gmail.com", location:"San Francisco, CA", bio:""})
     user2 = User.create({username:"JP", password: 123456, email:"jp@gmail.com", location:"San Francisco, CA", bio:""})
@@ -24,11 +27,23 @@ ApplicationRecord.transaction do
     user10 = User.create({username:"ILikeTurtles", password: 123456, email:"ILikeTurtles@gmail.com", location:"San Francisco, CA", bio:""})
     user11 = User.create({username:"uSeRWhO", password: 123456, email:"uSeRWhO@gmail.com", location:"San Francisco, CA", bio:""})
     
+    file1 = open('https://feetup-seeds.s3-us-west-1.amazonaws.com/netflix.jpg')
+    file2 = open('https://feetup-seeds.s3-us-west-1.amazonaws.com/drinks.jpg')
+    file3 = open('https://feetup-seeds.s3-us-west-1.amazonaws.com/spa_days.jpg')
+    file4 = open('https://feetup-seeds.s3-us-west-1.amazonaws.com/board_games.jpg')
+    file5 = open('https://feetup-seeds.s3-us-west-1.amazonaws.com/computer_games.jpg')
+
     group1 = Group.create({title:"Netflix bingers", location:"San Francisco, CA", description:"When watching Netflix by yourself isn't fun enough", private: false})
+    group1.photo.attach(io: file1, filename: 'netflix.jpg')
     group2 = Group.create({title:"Stay in with friends", location:"San Francisco, CA", description:"Why go out when we can all stay in together?", private: false})
+    group2.photo.attach(io: file2, filename: 'drinks.jpg')
     group3 = Group.create({title:"Home spa Days!", location:"San Francisco, CA", description:"Spas are expensive, come over and we can treat ourselves", private: true})
+    group3.photo.attach(io: file3, filename: 'spa_days.jpg')
     group4 = Group.create({title:"Games Games Games", location:"San Francisco, CA", description:"Board games, card games, everything!", private: false})
+    group4.photo.attach(io: file4, filename: 'board_games.jpg')
     group5 = Group.create({title:"W.O.W. together", location:"San Francisco, CA", description:"LAN parties and wow together", private: false})
+    group5.photo.attach(io: file5, filename: 'computer_games.jpg')
+
 
     Membership.create({ user_id: user1.id, group_id: group1.id })
     Membership.create({ user_id: user1.id, group_id: group2.id })

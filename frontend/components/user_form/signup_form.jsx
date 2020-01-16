@@ -80,11 +80,11 @@ class SignupForm extends React.Component {
                                     value={this.state.location ? this.state.location : "Choose a location"}
                                     onChange={(e) => this.setState({location: e.target.value})} 
                                     className="signup-input">
-                                <option value="Choose a location" disabled>Choose a location</option>
-                                <option value="San Francisco, CA">San Francisco, CA</option>
-                                <option value="Los Angeles, CA">Los Angeles, CA</option>
-                                <option value="New York, NY">New York, NY</option>
-                                <option value="Averill Park, NY">Averill Park, NY</option>
+                                    <option value="Choose a location" disabled>Choose a location</option>
+                                    <option value="San Francisco, CA">San Francisco, CA</option>
+                                    <option value="Los Angeles, CA">Los Angeles, CA</option>
+                                    <option value="New York, NY">New York, NY</option>
+                                    <option value="Averill Park, NY">Averill Park, NY</option>
                                 </select>
                         </label>
                         <br />
