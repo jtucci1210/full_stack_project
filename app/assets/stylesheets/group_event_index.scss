@@ -28,9 +28,19 @@
                     display: flex;
                     flex-direction: column;
 
+                    .events-date-span {
+                        color: red;
+                    }
+
                     .events-name-span {
                         padding-top: 10px;
                         padding-bottom: 10px;
+                        font-weight: bold;
+                        font-size: 20px;
+                    }
+
+                    .events-location-span {
+                        color: grey;
                     }
                 }
 
@@ -43,28 +53,39 @@
 
             .group-events-item-div2 {
                 .events-description-p {
-                    width: 300px;
+                    
                 }
             }
 
             .group-events-item-div3 {
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
 
                 .events-attendees-div {
-
+                    .events-attendees-span {
+                        color: grey;
+                    }
                 }
 
                 .events-attend-button-div {
-                    background-color: red;
-                    border-radius: 5px;
-                    padding: 10px;
-                    box-shadow: 1px 1px grey;
-                    width: 100px;
-                    text-align: center;
-                    &:hover {
-                        cursor: pointer;
+
+                    .events-attend-button {
+                        background-color: red;
+                        font-size: 14px;
+                        font-family: sans-serif;
+                        font-weight: bold;
+                        border-radius: 5px;
+                        padding: 10px;
+                        box-shadow: 2px 2px grey;
+                        width: 100px;
+                        text-align: center;
+                        &:hover {
+                            cursor: pointer;
+                        }
+
                     }
+                    
                 }
 
             }
