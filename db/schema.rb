@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_001446) do
+ActiveRecord::Schema.define(version: 2020_01_16_035531) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,22 @@ ActiveRecord::Schema.define(version: 2020_01_15_001446) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "group_id", null: false
+    t.integer "creator_id", null: false
+    t.string "description", null: false
+    t.string "venue_location", null: false
+    t.string "start_time", null: false
+    t.string "end_time", null: false
+    t.string "cost", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["creator_id"], name: "index_events_on_creator_id"
+    t.index ["group_id"], name: "index_events_on_group_id"
+    t.index ["name"], name: "index_events_on_name", unique: true
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string "title", null: false
     t.string "location", null: false
@@ -53,6 +69,15 @@ ActiveRecord::Schema.define(version: 2020_01_15_001446) do
     t.datetime "updated_at", null: false
     t.index ["group_id"], name: "index_memberships_on_group_id"
     t.index ["user_id", "group_id"], name: "index_memberships_on_user_id_and_group_id", unique: true
+  end
+
+  create_table "rsvps", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "event_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_rsvps_on_event_id"
+    t.index ["user_id", "event_id"], name: "index_rsvps_on_user_id_and_event_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|

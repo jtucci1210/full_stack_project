@@ -31,6 +31,18 @@ class User < ApplicationRecord
   through: :memberships,
   source: :group
 
+  has_many :rsvps,
+  foreign_key: :user_id,
+  class_name: :Rsvp
+
+  has_many :owned_events,
+  foreign_key: :creator_id,
+  class_name: :Event 
+  
+  has_many :events,
+  through: :rsvps,
+  source: :event
+
     # Class method for finding a user ONLY if we have the correct username and password
     def self.find_by_credentials(email, password)
       user = User.find_by(email: email)
