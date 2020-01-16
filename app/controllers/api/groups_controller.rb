@@ -14,6 +14,7 @@ class Api::GroupsController < ApplicationController
             @groups = current_user.groups
         else 
             @groups = Group.all
+            @events = Event.all
         end
         render "api/groups/index"
     end

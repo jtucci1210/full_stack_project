@@ -9,7 +9,7 @@ const groupReducer = (state = {}, action) => {
         case RECEIVE_GROUP:
             return merge({}, state, action.group.groups);
         case RECEIVE_ALL_GROUPS:
-            return merge({}, state, action.groups);
+            return merge({}, state, action.payload.groups);
         case RECEIVE_EVENT:
             return merge({}, state, action.payload.groups);
         case RECEIVE_ALL_EVENTS:

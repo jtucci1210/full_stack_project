@@ -5,9 +5,9 @@ export const RECEIVE_GROUP = 'RECEIVE_GROUP';
 export const RECEIVE_GROUP_ERRORS = 'RECEIVE_GROUP_ERRORS';
 
 
-export const receiveAllGroups = (groups) => ({
+export const receiveAllGroups = (payload) => ({
     type: RECEIVE_ALL_GROUPS,
-    groups: groups
+    payload: payload
 })
 
 export const receiveGroup = (group) => ({
@@ -22,7 +22,7 @@ export const receiveGroupErrors = errors => ({
 
 export const fetchAllGroups = () => dispatch => (
     groupAPIUtil.fetchAllGroups()
-        .then(groups => dispatch(receiveAllGroups(groups)))
+        .then(payload => dispatch(receiveAllGroups(payload)))
 )
 
 export const fetchGroup = (id) => dispatch => (
