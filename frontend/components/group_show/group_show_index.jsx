@@ -3,6 +3,7 @@ import GroupShowIndexItem from './group_show_index_item';
 import { ProtectedRoute } from '../../util/route_util';
 import { Route, Link, Switch, HashRouter, Redirect } from 'react-router-dom';
 import Members from './members';
+import GroupEventIndex from './group_event_index';
 
 class GroupShowIndex extends React.Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class GroupShowIndex extends React.Component {
     }
 
     render () {
-        const { group, members, currentUser, createMembership, deleteMembership, fetchGroup } = this.props;
+        const { group, members, currentUser, createMembership, deleteMembership, fetchGroup, events } = this.props;
         if (!group) return null;
         return (
             <div>
@@ -28,7 +29,11 @@ class GroupShowIndex extends React.Component {
                             <Members {...props} members={members} /> :
                             <Redirect to="/" />
                          )} />
-                    {/* <ProtectedRoute exact path="/groups/:groupId/events" component={Events}/> */}
+                    <Route exact path="/groups/:groupId/events" 
+                        render={(props) => ( currentUser ?
+                            <GroupEventIndex {...props} events={events} currentUser={currentUser}/> :
+                            <Redirect to="/" />
+                         )} />
                 </Switch> 
             </div>
         )

@@ -5,8 +5,9 @@ import { fetchAllGroups } from '../../actions/group_actions';
 const mapStateToProps = (state) => {
     return {
         // needs to be int for inclusion check in members
-    currentUserId: state.session.id,
+    currentUser: state.session.currentUser,
     groups: Object.values(state.entities.groups),
+    events: Object.values(state.entities.events)
 }}
 
 

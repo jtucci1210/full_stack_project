@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps ) => ({
     group: state.entities.groups[ownProps.match.params.groupId],
     // here members are in a users slice of state b/c more info per user needed
     members: Object.values(state.entities.users),
-    currentUser: state.session.id
+    currentUser: state.session.id,
+    events: Object.values(state.entities.events)
 })
 
 const mapDispatchToProps = (dispatch) => ({

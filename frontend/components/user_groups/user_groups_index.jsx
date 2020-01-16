@@ -10,18 +10,18 @@ class UserGroupsIndex extends React.Component {
     }
 
     render () {
-        const { currentUserId, groups } = this.props;
+        const { currentUser, groups, events } = this.props;
         // debugger;
         if (!groups) return null;
         const userGroups = groups.filter(group => (
-            group.members.includes(currentUserId)
+            group.members.includes(currentUser.id)
         ))
         return (
             <div>
                 <div className="user-groups-infobar">
                         <h2>Find your next event</h2>
-                        <span>{"__"} events in your groups</span>
-                        <span>{"__"} events near you</span>
+                        <span>{currentUser.events.length} events in your groups</span>
+                        <span>{events.length} events near you</span>
                 </div>
                 <div className="user-groups-container">
                     <div className="user-groups-index">
