@@ -1,0 +1,74 @@
+.group-events-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2 {
+        padding: 20px;
+    }
+
+    .group-events-div-container {
+        height: 300px;
+        width: 500px;
+
+        .group-events-div-item {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid lightgrey;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 5px 5px 10px grey;
+            font-family: sans-serif;
+
+            .group-events-item-div1 {
+                display: flex;
+                justify-content: space-between;
+                
+                .events-info-div {
+                    display: flex;
+                    flex-direction: column;
+
+                    .events-name-span {
+                        padding-top: 10px;
+                        padding-bottom: 10px;
+                    }
+                }
+
+                .event-index-image {
+                    height: 100px;
+                    width: 150px;
+                    border-radius: 10px;
+                }
+            }
+
+            .group-events-item-div2 {
+                .events-description-p {
+                    width: 300px;
+                }
+            }
+
+            .group-events-item-div3 {
+                display: flex;
+                justify-content: space-between;
+
+                .events-attendees-div {
+
+                }
+
+                .events-attend-button-div {
+                    background-color: red;
+                    border-radius: 5px;
+                    padding: 10px;
+                    box-shadow: 1px 1px grey;
+                    width: 100px;
+                    text-align: center;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+
+            }
+        }
+
+    }
+}

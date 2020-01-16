@@ -4,7 +4,7 @@ const GroupEventIndex = ({ events, currentUser }) => {
     
     return (
         <div className="group-events-div">
-            <h2>All Group events</h2>
+            <h2>All Group Events</h2>
             <div className="group-events-div-container">
                 {events.map(event => (
                     <div className="group-events-div-item" key={event.id}>
