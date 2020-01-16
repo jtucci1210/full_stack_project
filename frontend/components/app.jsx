@@ -10,6 +10,7 @@ import GroupIndexContainer from "./group_index/group_index_container";
 import GroupShowContainer from "./group_show/group_show_container";
 import UserShowContainer from './user_profile/user_show_container';
 import SplashContainer from './splash/splash_container';
+import Footer from './footer/footer';
 
 const App = () => (
     <div>
@@ -23,6 +24,9 @@ const App = () => (
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
             <UnProtectedRoute exact path="/" component={SplashContainer} />
+        <footer>
+            <Footer />
+        </footer>
     </div>
 );
 

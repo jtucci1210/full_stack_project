@@ -25,6 +25,9 @@ class Splash extends React.Component {
                         </div>
                     </div>
                 </div>
+                <div className="splash-page-events">
+
+                </div>
             </div>
         )
     }

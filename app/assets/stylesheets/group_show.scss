@@ -69,6 +69,7 @@
     font-size: 20px;
     font-family: sans-serif;
     font-weight: bold;
+    min-height: 300px;
     
     .group-show-page-description {
         font-size: 16px;
@@ -91,6 +92,8 @@
     font-size: 20px;
     font-weight: bold;
     font-family: sans-serif;
+    min-height: 300px;
+    
     .members-div-items {
         display: flex;
         flex-wrap: wrap;
