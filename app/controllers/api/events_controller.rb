@@ -57,7 +57,8 @@ class Api::EventsController < ApplicationController
         @rsvp = Rsvp.new(user_id: current_user.id, event_id: params[:event_id])
         if @rsvp.save
             @event = Event.find(@rsvp.event_id)
-            render "api/events/show"
+            @group = @event.group
+            render "api/groups/show"
         else
             render json: @rsvp.errors.full_messages, status: 404
         end
@@ -67,7 +68,8 @@ class Api::EventsController < ApplicationController
         @rsvp = Rsvp.find_by(user_id: current_user.id, event_id: params[:event_id])
         if @rsvp.destroy 
             @event = Event.find(@rsvp.event_id)
-            render "api/events/show"
+            @group = @event.group
+            render "api/groups/show"
         else
             render plain: "You are not currently attending this event"
         end

@@ -11,7 +11,7 @@ class GroupShowIndexItem extends React.Component {
 
     render () {
         const { group, members, currentUser, deleteMembership, createMembership } = this.props;
-        const inGroup = members.map(member => (member.id)).includes(currentUser)
+        const inGroup = members.map(member => (member.id)).includes(currentUser.id)
         return (
             <div>
                 <div className="group-show-page-div">

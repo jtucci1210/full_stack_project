@@ -1,7 +1,8 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
 import { RECEIVE_GROUP } from '../actions/group_actions';
 import { RECEIVE_EVENT, RECEIVE_ALL_EVENTS } from '../actions/event_actions';
-
+import { merge } from 'lodash';
+ 
 
 const usersReducer = (state = {}, action) => {
     Object.freeze(state);

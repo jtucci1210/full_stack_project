@@ -7,11 +7,12 @@ const eventReducer = (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_EVENT:
-            return merge({}, state, action.payload.events);
+            return action.payload.events;
         case RECEIVE_ALL_EVENTS:
             return merge({}, state, action.payload.events);
         case RECEIVE_GROUP:
-            return action.group.events;
+            if (!action.group.events) {return {} } else {
+            return  action.group.events};
         case RECEIVE_ALL_GROUPS:
             return merge({}, state, action.payload.events);            
         default:

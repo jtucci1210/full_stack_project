@@ -3,11 +3,11 @@ import UserGroupsIndex from './user_groups_index';
 import { fetchAllGroups } from '../../actions/group_actions';
 
 const mapStateToProps = (state) => {
+    // debugger;
     return {
-        // needs to be int for inclusion check in members
-    currentUser: state.session.currentUser,
-    groups: Object.values(state.entities.groups),
-    events: Object.values(state.entities.events)
+        currentUser: state.session.currentUser,
+        groups: Object.values(state.entities.groups),
+        events: Object.values(state.entities.events)
 }}
 
 

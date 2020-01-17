@@ -14,7 +14,7 @@ class GroupShowIndex extends React.Component {
     }
 
     render () {
-        const { group, members, currentUser, createMembership, deleteMembership, fetchGroup, events } = this.props;
+        const { group, members, currentUser, createMembership, deleteMembership, fetchGroup, events, createRsvp, deleteRsvp } = this.props;
         if (!group) return null;
         return (
             <div>
@@ -31,7 +31,7 @@ class GroupShowIndex extends React.Component {
                          )} />
                     <Route exact path="/groups/:groupId/events" 
                         render={(props) => ( currentUser ?
-                            <GroupEventIndex {...props} events={events} currentUser={currentUser}/> :
+                            <GroupEventIndex {...props} events={events} currentUser={currentUser} createRsvp={createRsvp} deleteRsvp={deleteRsvp}/> :
                             <Redirect to="/" />
                          )} />
                 </Switch> 

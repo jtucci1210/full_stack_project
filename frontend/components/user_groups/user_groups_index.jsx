@@ -12,7 +12,7 @@ class UserGroupsIndex extends React.Component {
     render () {
         const { currentUser, groups, events } = this.props;
         // debugger;
-        if (!groups) return null;
+        if (!groups || !events) return null;
         const userGroups = groups.filter(group => (
             group.members.includes(currentUser.id)
         ))
