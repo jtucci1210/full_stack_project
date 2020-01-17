@@ -13,7 +13,7 @@ import SplashContainer from './splash/splash_container';
 import Footer from './footer/footer';
 
 const App = () => (
-    <div>
+    <div className="whole-page-div">
         <Modal />
         <header>
             <Link to="/" className="header-link"><h1>FeetUp</h1></Link>
