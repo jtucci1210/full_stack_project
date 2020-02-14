@@ -19,8 +19,8 @@ class Splash extends React.Component {
                                 <img className="sample-group-img" src={group.photoUrl} alt="Group profile" />
                                 <div className="sample-group-div">
                                     <h5 className="sample-group-header">{group.title}</h5>
-                                    <span className="sample-group-events">{group.events.length} Upcoming Events</span>
-                                    <span className="sample-group-members">{group.members.length} Members</span>
+                                    <span className="sample-group-events">{group.events.length} upcoming Events</span>
+                                    <span className="sample-group-members">{group.members.length} members</span>
                                 </div>
                             </div>
                         </Link>
@@ -41,7 +41,7 @@ class Splash extends React.Component {
                             <span className="sample-event-title">{event.name}</span>
                             <span className="sample-event-group">{event.group}</span>
                             <span className="sample-event-location"><i className="fas fa-map-marker-alt"></i> {event.venueLocation}</span>
-                            <span className="sample-event-attendees">{event.attendees.length} Attendees</span>
+                            <span className="sample-event-attendees">{event.attendees.length} attendees</span>
                         </div>
                     </Link>
                 ))
@@ -78,7 +78,7 @@ class Splash extends React.Component {
                         </div>
                     </div>
                     <div className="splash-page-groups">
-                        <span className="sample-event-caption">Groups Near You</span>
+                        <span className="sample-group-caption">Groups Near You</span>
                         <span>Find groups that get together to do the things they love</span>
                         <div className="sample-groups">
                             {this.displaySampleGroups()}

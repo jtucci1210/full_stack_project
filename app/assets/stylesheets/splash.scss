@@ -58,7 +58,7 @@
     .splash-page-events {
         display: flex;
         flex-direction: column;
-        width: 1000px;
+        width: 1050px;
         font-family: sans-serif;
     
         .sample-event-caption {
@@ -114,10 +114,61 @@
     .splash-page-groups {
         display: flex;
         flex-direction: column;
+        width: 1050px;
+        font-family: sans-serif;
+
+        .sample-group-caption {
+            font-size: 20px;
+            font-weight: bolder;
+            margin-top: 40px;
+            margin-bottom: 5px;
+        }
     
         .sample-groups {
             display: flex;
-    
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+
+            .sample-group {
+                display: flex;
+                flex-direction: column;
+                color: black;
+                overflow: hidden;
+                border: 1px solid lightgrey;
+                border-radius: 10px;
+                box-shadow: 1px 1px 8px grey;
+                margin: 10px;
+                width: 250px;
+                height: 300px;
+
+                .sample-group-img {
+                    width: 250px;
+                    height: 140px;
+                }
+
+                .sample-group-div {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    height: 150px;
+
+                    .sample-group-header {
+                        font-weight: bolder;
+                        font-size: 20px;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .sample-group-events {
+                        margin-bottom: 10px;
+                    }
+
+                    .sample-group-members {
+                        color: grey;
+                        margin-top: auto;
+                    }
+                }
+            }
         }
     }
 }
