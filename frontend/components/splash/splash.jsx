@@ -41,7 +41,7 @@ class Splash extends React.Component {
                             <span className="sample-event-title">{event.name}</span>
                             <span className="sample-event-group">{event.group}</span>
                             <span className="sample-event-location"><i className="fas fa-map-marker-alt"></i> {event.venueLocation}</span>
-                            <span className="sample-event-attendees">{event.attendees}</span>
+                            <span className="sample-event-attendees">{event.attendees.length} Attendees</span>
                         </div>
                     </Link>
                 ))
@@ -69,16 +69,20 @@ class Splash extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div className="splash-page-events">
-                    <span>Events Near You</span>
-                    <div className="sample-events">
-                        {this.displaySampleEvents()}
+                <div className="sample-items">
+                    <div className="splash-page-events">
+                        <span className="sample-event-caption">Events Near You</span>
+                        <span>See what's happening soon in your area</span>
+                        <div className="sample-events">
+                            {this.displaySampleEvents()}
+                        </div>
                     </div>
-                </div>
-                <div className="splash-page-groups">
-                    <span>Groups Near You</span>
-                    <div className="sample-groups">
-                        {this.displaySampleGroups()}
+                    <div className="splash-page-groups">
+                        <span className="sample-event-caption">Groups Near You</span>
+                        <span>Find groups that get together to do the things they love</span>
+                        <div className="sample-groups">
+                            {this.displaySampleGroups()}
+                        </div>
                     </div>
                 </div>
             </div>
