@@ -52,5 +52,23 @@
 }
 
 .splash-page-events {
-    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    .sample-events {
+        display: flex;
+
+        .sample-event-div {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+.splash-page-groups {
+    display: flex;
+    flex-direction: column;
+
+    .sample-groups {
+        display: flex;
+
+    }
 }
