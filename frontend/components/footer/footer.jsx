@@ -10,6 +10,8 @@ const Footer = () => {
                 <a target="_blank" rel="noopener noreferrer" href="https://github.com/jtucci1210"><i className="fab fa-github"></i></a>
                 <div className="im-a-spacer"></div>
                 <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/james-tucci-56b06b99/"><i className="fab fa-linkedin"></i></a>
+                <div className="im-a-spacer"></div>
+                <a target="_blank" rel="noopener noreferrer" href="https://angel.co/james-tucci-2"><i className="fab fa-angellist"></i></a>
             </div>
         </div>
     )
