@@ -18,11 +18,10 @@ const App = () => (
             <Link to="/" className="header-link"><h1>FeetUp</h1></Link>
             <GreetingContainer />
         </header>
-            <UnProtectedRoute path="/groups/:groupId" component={GroupShowContainer} />
+            <Route path="/groups/:groupId" component={GroupShowContainer} />
             <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
-            {/* <ProtectedRoute exact path="/events" component={UserEventsIndexContainer} /> */}
             <ProtectedRoute exact path="/events" component={EventIndexContainer} />
             <UnProtectedRoute exact path="/" component={SplashContainer} />
         <footer>

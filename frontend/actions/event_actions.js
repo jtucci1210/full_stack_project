@@ -4,10 +4,11 @@ export const RECEIVE_ALL_EVENTS = 'RECEIVE_ALL_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const RECEIVE_EVENT_ERRORS = 'RECEIVE_EVENT_ERRORS';
 
-export const receiveAllEvents = (payload) => ({
+export const receiveAllEvents = (payload) => {
+    return {
     type: RECEIVE_ALL_EVENTS,
     payload: payload
-}) 
+}} 
 
 export const receiveEventErrors = (errors) => ({
     type: RECEIVE_EVENT_ERRORS,
@@ -22,6 +23,8 @@ export const receiveEvent = (payload) => ({
 export const fetchAllEvents = () => dispatch => (
     eventAPIUtil.fetchAllEvents()
         .then(payload => dispatch(receiveAllEvents(payload)))
+
+    
 )
 
 export const fetchAllUserEvents = (userId) => dispatch => (

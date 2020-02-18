@@ -49,6 +49,7 @@ class Api::EventsController < ApplicationController
             @events = @user.events
         else
             @events = Event.all 
+            @groups = Group.all
         end
             render "api/events/index" 
     end

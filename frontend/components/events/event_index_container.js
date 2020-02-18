@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import EventIndex from './event_index';
-import { fetchAllEvents } from "../../util/events_api_util";
+import { fetchAllEvents } from "../../actions/event_actions";
 
 const mapStateToProps = (state) => ({
     currentUser: state.session.currentUser,
