@@ -21,17 +21,17 @@ export const receiveEvent = (payload) => ({
 
 export const fetchAllEvents = () => dispatch => (
     eventAPIUtil.fetchAllEvents()
-        .then(payload => dispatchEvent(receiveAllEvents(payload)))
+        .then(payload => dispatch(receiveAllEvents(payload)))
 )
 
 export const fetchAllUserEvents = (userId) => dispatch => (
     eventAPIUtil.fetchAllUserEvents(userId)
-        .then(payload => dispatchEvent(receiveAllEvents(payload)))
+        .then(payload => dispatch(receiveAllEvents(payload)))
 )
 
 export const fetchAllGroupEvents = (groupId) => dispatch => (
     eventAPIUtil.fetchAllGroupEvents(groupId)
-        .then(payload => dispatchEvent(receiveAllEvents(payload)))
+        .then(payload => dispatch(receiveAllEvents(payload)))
 )
 
 export const createRsvp = (eventId) => dispatch => (

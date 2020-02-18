@@ -12,7 +12,7 @@ const eventReducer = (state = {}, action) => {
             return merge({}, state, action.payload.events);
         case RECEIVE_GROUP:
             if (!action.group.events) {return {} } else {
-            return  action.group.events};
+            return action.group.events};
         case RECEIVE_ALL_GROUPS:
             return merge({}, state, action.payload.events);            
         default:
