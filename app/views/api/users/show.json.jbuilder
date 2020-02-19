@@ -3,6 +3,7 @@ json.users do
         json.extract! @user, :id, :username, :email, :bio, :location
         json.created_at @user.created_at.to_date.to_s
         json.events @user.events.pluck(:id)
+        json.groups @user.groups.pluck(:id)
     end
 end
 json.groups do

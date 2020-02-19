@@ -11,7 +11,7 @@ class GroupIndex extends React.Component {
 
     render () {
         const { groups } = this.props;
-        if (!groups) return null;
+        if (groups.length < 1) return null;
         return (
             <div className="groups-container">
                     <div className="groups-index">

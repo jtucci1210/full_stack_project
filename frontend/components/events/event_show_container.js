@@ -5,8 +5,8 @@ import { fetchEvent } from "../../actions/event_actions";
 const mapStateToProps = (state) => {
     return {
         currentUser: state.session.currentUser,
-        event: Object.values(state.entities.events)[0],
-        group: Object.values(state.entities.groups)[0],
+        events: Object.values(state.entities.events),
+        groups: Object.values(state.entities.groups),
         users: Object.values(state.entities.users)
 }}
 
