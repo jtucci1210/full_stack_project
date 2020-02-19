@@ -14,15 +14,17 @@ class EventShow extends React.Component {
         if (!event) return null;
         const eventCreator = users.find(user => user.id === event.creatorId);
         return (
-            <div>
+            <div className="event-show-page">
                 <div className="event-show-top">
-                    <span>{event.date}</span>
-                    <span>{event.name}</span>
-                    <div>
-                        <i className="fas fa-users"></i>
-                        <div>
-                            <span>Hosted by </span>
-                            <span>{eventCreator.username} & {group.title}</span>
+                    <div className="event-show-top-content">
+                        <span className="event-show-date">{event.date}</span>
+                        <span className="event-show-name">{event.name}</span>
+                        <div className="host-info-div">
+                            <i className="fas fa-users show-hosts"></i>
+                            <div className="host-info">
+                                <span>Hosted by </span>
+                                <span className="hosts">{eventCreator.username} and {group.title}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -31,18 +33,20 @@ class EventShow extends React.Component {
                         <div className="event-img-container">
                             <img src={event.photoUrl} alt="event-show-img"/>
                         </div>
-                        <span>Details</span>
+                        <span className="event-show-details">Details</span>
                         <div>{event.description}</div>
-                        <span>Attendees</span>
-                        <div className="attendees-div-items">
+                        <span className="event-show-details">Cost</span>
+                        <span>{event.cost}</span>
+                        <span className="event-show-details">Attendees</span>
+                        <div className="attendees-div">
                             {users.map(attendee => (
-                                <li key={attendee.id}>
+                                <div key={attendee.id} className="attendees-div-items">
                                     <i className="fas fa-user-circle"></i>
                                     <div className="attendees-div-content">
                                         <h4 className="attendee-username-header">{attendee.username}</h4>
                                         <span className="attendee-join-date">Joined on {attendee.createdAt}</span>
                                     </div>
-                                </li>
+                                </div>
                             ))}
                         </div>
                     </div>

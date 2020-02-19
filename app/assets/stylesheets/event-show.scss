@@ -1,0 +1,114 @@
+
+.event-show-page {
+    font-family: sans-serif;
+
+    .event-show-top {
+        display: flex;
+        justify-content: center;
+        height: 180px;
+        border: 1px solid lightgrey;
+        padding: 20px;
+        padding-left: 40px;
+
+        .event-show-top-content {
+            width: 1000px;
+            display: flex;
+            flex-direction: column;
+
+
+            .event-show-date {
+                color: grey;
+            }
+            .event-show-name {
+                font-size: 32px;
+                font-weight: bolder;
+            }
+        
+            .host-info-div {
+                display: flex;
+                margin-top: 20px;
+    
+                .show-hosts {
+                    font-size: 35px;
+                }
+        
+                .host-info {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 10px;
+    
+                    .hosts {
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    
+    .event-show-bottom {
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+
+
+        .event-show-bottom-left {
+            display: flex;
+            width: 600px;
+            flex-direction: column;
+            margin-left: 40px;
+            margin-right: 100px;
+
+            .event-img-container img{
+                height: 375px;
+                width: 600px;
+                border-radius: 10px;
+            }
+
+            .event-show-details {
+                margin-top: 40px;
+                margin-bottom: 20px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .attendees-div {
+                display: flex;
+                flex-wrap: wrap;
+                width: 600px;
+
+                .attendees-div-items {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    width: 133px;
+                    height: 185px;
+                    background-color: lightgray;
+                    margin: 10px;
+                    box-shadow: 5px 5px 10px red;
+                    border-radius: 5px;
+                    padding: 20px;
+
+                    .attendees-div-content {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+            }
+        }
+
+        .event-show-bottom-right {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+
+            .event-group-photo {
+            
+                img {
+                    height: 75px;
+                    width: 75px;
+                }
+            }
+        }
+    }
+}
