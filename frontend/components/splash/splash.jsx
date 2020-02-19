@@ -35,7 +35,7 @@ class Splash extends React.Component {
             const events = this.props.events.slice(0, 3);
             return (
                 events.map(event => (
-                    <Link to={`/${event.group}/events/${event.id}`} key={event.id}>
+                    <Link to={`/events/${event.id}`} key={event.id}>
                         <div className="sample-event-div">
                             <span className="sample-event-date">{event.date}</span>
                             <span className="sample-event-title">{event.name}</span>

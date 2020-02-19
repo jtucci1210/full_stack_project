@@ -1,10 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const GroupEventIndexItem = ({event, currentUser, createRsvp, deleteRsvp }) => {
     const attending = event.attendees.includes(currentUser.id);
-    // debugger;
     return (
-        <div className="group-events-div-item" key={event.id}>
+        <Link to={`/events/${event.id}`} className="group-events-div-item" key={event.id}>
             <div className="group-events-item-div1">
                 <div className="events-info-div">
                     <span className="events-date-span">
@@ -37,7 +37,7 @@ const GroupEventIndexItem = ({event, currentUser, createRsvp, deleteRsvp }) => {
                     </button>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
