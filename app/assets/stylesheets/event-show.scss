@@ -92,6 +92,12 @@
                         display: flex;
                         flex-direction: column;
                         align-items: center;
+
+                        .attendee-username-header {
+                            margin-top: 10px;
+                            margin-bottom: 20px;
+                            font-size: 16px;
+                        }
                     }
                 }
             }
@@ -102,11 +108,105 @@
             flex-direction: column;
             width: 300px;
 
-            .event-group-photo {
+            .event-group-info-div {
+                display: flex;
+                align-items: center;
+                height: 125px;
+                background-color: lightgray;
+                box-shadow: 5px 5px 15px red;
+                border-radius: 5px;
+                margin-bottom: 50px;
+                padding-left: 20px;
+
+                .event-group-photo {
+                
+                    img {
+                        height: 75px;
+                        width: 75px;
+                        border-radius: 3px;
+                    }
+                }
+
+                .event-group-info {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 10px;
+                    padding-top: 30px;
+                    align-self: flex-start;
+
+                    .event-group-title {
+                        font-weight: bold;
+                        padding-bottom: 10px;
+                    }
+                }
+            }
+
+            .event-time-info {
+                display: flex;
+                flex-direction: column;
+                height: 200px;
+                background-color: lightgray;
+                box-shadow: 5px 5px 15px red;
+                border-radius: 5px;
+                margin-bottom: 50px;
+                padding: 25px;
+
+                .event-time-div {
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    .icon-div {
+                        font-size: 25px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        .fa-clock {
+                            margin-bottom: 45px;
+                        }
+                    }
+
+                    .event-time {
+                        display: flex;
+                        flex-direction: column;
+                        padding-left: 20px;
+
+                        .event-show-location {
+                            margin-top: 35px;
+                        }
+                    }
+                }
+            }
             
-                img {
-                    height: 75px;
-                    width: 75px;
+            .event-attend-edit {
+                display: flex;
+                padding: 10px;
+                
+                .attend-event {
+                    font-size: 16px;
+                    padding: 10px;
+                    background-color: red;
+                    border-radius: 5px;
+                    color: white;
+                    width: 125px;
+                    height: 40px;
+                    text-align: center;
+                    box-shadow: 2px 2px 5px grey;
+                    cursor: pointer;
+                }
+    
+                .edit-event {
+                    font-size: 16px;
+                    margin-left: 25px;
+                    font-size: 16px;
+                    padding: 10px;
+                    border-radius: 5px;
+                    color: red;
+                    width: 125px;
+                    height: 40px;
+                    text-align: center;
+                    border: 1px solid red;
+                    cursor: pointer;
                 }
             }
         }

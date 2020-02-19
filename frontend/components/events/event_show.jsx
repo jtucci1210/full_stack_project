@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 class EventShow extends React.Component {
@@ -51,28 +52,33 @@ class EventShow extends React.Component {
                         </div>
                     </div>
                     <div className="event-show-bottom-right">
-                        <div className="event-group-info">
-                            <div className="event-group-photo">
-                                <img src={group.photoUrl} alt="event-group-img"/>
-                            </div>
-                            <div className="event-group-info">
-                                <span>{group.title}</span>
-                                <span>{group.private ? "Private" : "Public"} Group</span>
-                            </div>
-                            <div className="event-time-info">
-                                <div className="event-time-div">
-                                    <i className="far fa-clock"></i>
-                                    <div className="event-time">
-                                        <span>{event.date}</span>
-                                        <span>{event.startTime} to {event.endTime}</span>
-                                    </div>
+                        <div>
+                            <Link to={`/groups/${group.id}`} className="event-group-info-div">
+                                <div className="event-group-photo">
+                                    <img src={group.photoUrl} alt="event-group-img"/>
                                 </div>
-                                <span><i className="fas fa-map-marker-alt"></i> {event.venueLocation}</span>
+                                <div className="event-group-info">
+                                    <span className="event-group-title">{group.title}</span>
+                                    <span className="event-group-private">{group.private ? "Private" : "Public"} Group</span>
+                                </div>
+                            </Link>
+                        </div>
+                        <div className="event-time-info">
+                            <div className="event-time-div">
+                                <div className="icon-div">
+                                    <i className="far fa-clock"></i>
+                                    <i className="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div className="event-time">
+                                    <span>{event.date}</span>
+                                    <span>{event.startTime} to {event.endTime}</span>
+                                    <span className="event-show-location"> {event.venueLocation}</span>
+                                </div>
                             </div>
-                            <div className="event-attend-edit">
-                                <button className="attend-event">Attend</button>
-                                <button className="edit-event">Edit Event</button>
-                            </div>
+                        </div>
+                        <div className="event-attend-edit">
+                            <button className="attend-event">Attend</button>
+                            <button className="edit-event">Edit Event</button>
                         </div>
                     </div>
                 </div>
