@@ -23,8 +23,11 @@ export const receiveEvent = (payload) => ({
 export const fetchAllEvents = () => dispatch => (
     eventAPIUtil.fetchAllEvents()
         .then(payload => dispatch(receiveAllEvents(payload)))
+)
 
-    
+export const fetchEvent = (eventId) => dispatch => (
+    eventAPIUtil.fetchEvent(eventId)
+        .then(payload => dispatch(receiveEvent(payload)))
 )
 
 export const fetchAllUserEvents = (userId) => dispatch => (

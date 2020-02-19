@@ -6,6 +6,7 @@ import Modal from "./modal/modal";
 import UserGroupsIndexContainer from "./user_groups/user_groups_container";
 import GroupIndexContainer from "./group_index/group_index_container";
 import EventIndexContainer from "./events/event_index_container";
+import EventShowContainer from "./events/event_show_container";
 import GroupShowContainer from "./group_show/group_show_container";
 import UserShowContainer from './user_profile/user_show_container';
 import SplashContainer from './splash/splash_container';
@@ -19,6 +20,7 @@ const App = () => (
             <GreetingContainer />
         </header>
             <Route path="/groups/:groupId" component={GroupShowContainer} />
+            <Route path="/events/:eventId" component={EventShowContainer} />
             <ProtectedRoute exact path="/users/:userId" component={UserShowContainer} />
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />

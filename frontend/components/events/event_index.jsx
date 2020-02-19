@@ -13,7 +13,7 @@ class EventIndex extends React.Component {
 
     displayEvent(event) {
         return (
-            <Link to={`/${event.group}/events/${event.id}`} key={event.id}>
+            <Link to={`/events/${event.id}`} key={event.id}>
                 <div className="event-index-item">
                     <div className="event-index-item-date">
                         <span>{event.date}</span>
