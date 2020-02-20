@@ -3,6 +3,7 @@ import GroupShowIndex from './group_show_index';
 import { fetchGroup } from '../../actions/group_actions';
 import { createMembership, deleteMembership } from "../../actions/group_actions";
 import { createRsvp, deleteRsvp } from "../../actions/event_actions";
+import { openModal } from "../../actions/modal_actions";
 
 
 const mapStateToProps = (state, ownProps ) => ({
@@ -19,6 +20,7 @@ const mapDispatchToProps = (dispatch) => ({
     deleteMembership: (groupId) => dispatch(deleteMembership(groupId)),
     createRsvp: (eventId) => dispatch(createRsvp(eventId)),
     deleteRsvp: (eventId) => dispatch(deleteRsvp(eventId)),
+    openModal: modal => dispatch(openModal(modal))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(GroupShowIndex)

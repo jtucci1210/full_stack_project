@@ -8,6 +8,15 @@ class GroupShowIndexItem extends React.Component {
         super(props);
 
     }
+    joinGroup(inGroup, group) {
+        if (this.props.currentUser.id) {
+            inGroup ?
+                this.props.deleteMembership(group.id) :
+                this.props.createMembership(group.id)
+        } else {
+            this.props.openModal('signup');
+        }
+    }
 
     render () {
         const { group, members, currentUser, deleteMembership, createMembership } = this.props;
@@ -37,7 +46,7 @@ class GroupShowIndexItem extends React.Component {
                         <Link to={`/groups/${group.id}/members`}>Members</Link> 
                     </li>
                     <li>
-                        <button onClick={(inGroup ? () => deleteMembership(group.id) : () => createMembership(group.id))}>
+                        <button onClick={() => this.joinGroup(inGroup, group)}>
                             { inGroup ? "Leave Group" : "Join Group"}
                         </button>
                     </li>

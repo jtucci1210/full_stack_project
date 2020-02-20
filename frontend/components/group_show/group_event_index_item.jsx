@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const GroupEventIndexItem = ({event, currentUser, createRsvp, deleteRsvp }) => {
+
+
+const GroupEventIndexItem = ({event, currentUser, createRsvp, deleteRsvp, openModal }) => {
+    function attend(attending, event){
+        if (currentUser.id) {
+            attending ?
+                deleteRsvp(event.id) :
+                createRsvp(event.id)
+        } else {
+            openModal('signup');
+        }
+    }
     const attending = event.attendees.includes(currentUser.id);
     return (
         <Link to={`/events/${event.id}`} className="group-events-div-item" key={event.id}>
@@ -32,7 +43,7 @@ const GroupEventIndexItem = ({event, currentUser, createRsvp, deleteRsvp }) => {
                 </div>
                 <div className="events-attend-button-div">
                     <button className="events-attend-button"
-                        onClick={attending ? () => deleteRsvp(event.id) : () => createRsvp(event.id)}>
+                        onClick={() => attend(attending, event)}>
                         {attending ? "Can't Go" : "Attend"}
                     </button>
                 </div>

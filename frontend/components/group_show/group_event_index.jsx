@@ -1,7 +1,7 @@
 import React from 'react';
 import GroupEventIndexItem from './group_event_index_item';
 
-const GroupEventIndex = ({ events, currentUser, createRsvp, deleteRsvp }) => {
+const GroupEventIndex = ({ events, currentUser, createRsvp, deleteRsvp, openModal }) => {
     
     return (
         <div className="group-events-div">
@@ -11,7 +11,7 @@ const GroupEventIndex = ({ events, currentUser, createRsvp, deleteRsvp }) => {
                 events.map(event => (
                     <GroupEventIndexItem key ={event.id} event={event}
                         currentUser={currentUser} createRsvp={createRsvp}
-                        deleteRsvp={deleteRsvp} />
+                        deleteRsvp={deleteRsvp} openModal={openModal}/>
                 ))
                 : null }
             </div>

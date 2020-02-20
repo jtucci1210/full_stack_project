@@ -14,7 +14,7 @@ class GroupShowIndex extends React.Component {
     }
 
     render () {
-        const { group, members, currentUser, createMembership, deleteMembership, fetchGroup, events, createRsvp, deleteRsvp } = this.props;
+        const { group, members, currentUser, createMembership, deleteMembership, fetchGroup, events, createRsvp, deleteRsvp, openModal } = this.props;
         if (!group) return null;
         return (
             <div>
@@ -22,7 +22,8 @@ class GroupShowIndex extends React.Component {
                 members={members} currentUser={currentUser}
                 createMembership={createMembership} 
                 deleteMembership={deleteMembership}
-                fetchGroup={fetchGroup}/>
+                fetchGroup={fetchGroup}
+                openModal={openModal}/>
                 <Switch>
                     <Route exact path="/groups/:groupId/members" 
                         render={(props) => ( currentUser ?
@@ -31,7 +32,7 @@ class GroupShowIndex extends React.Component {
                          )} />
                     <Route exact path="/groups/:groupId/events" 
                         render={(props) => ( currentUser ?
-                            <GroupEventIndex {...props} events={events} currentUser={currentUser} createRsvp={createRsvp} deleteRsvp={deleteRsvp}/> :
+                            <GroupEventIndex {...props} events={events} currentUser={currentUser} createRsvp={createRsvp} deleteRsvp={deleteRsvp} openModal={openModal}/> :
                             <Redirect to="/" />
                          )} />
                 </Switch> 
