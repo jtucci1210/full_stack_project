@@ -21,7 +21,7 @@ class GroupShowIndexItem extends React.Component {
     createEvent(inGroup, currentUser, group) {
         if (inGroup) {
             return (
-                <Link to="/events/new">
+                <Link to={`/${group.id}/events/new`}>
                     Create Event
                 </Link>
             )

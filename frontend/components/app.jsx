@@ -26,7 +26,7 @@ const App = () => (
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
             <ProtectedRoute exact path="/events" component={EventIndexContainer} />
-            <ProtectedRoute exact path="/events/new" component={NewEventContainer} />
+            <ProtectedRoute exact path="/:groupId/events/new" component={NewEventContainer} />
             <UnProtectedRoute exact path="/" component={SplashContainer} />
         <footer>
             <Footer />
