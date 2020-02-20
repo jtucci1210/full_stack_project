@@ -12,14 +12,33 @@ class EventShow extends React.Component {
         this.props.fetchEvent(this.eventId);
     }
 
+    editEvent(host, userId) {
+        if (host === userId) {
+            return (
+                <button className="edit-event">Edit Event</button>
+            )
+        }
+    }
+    attend(attending, event){
+        debugger;
+        if (this.props.currentUser.id) {
+            attending ?
+                this.props.deleteRsvp(event.id) :
+                this.props.createRsvp(event.id)
+        } else {
+            this.props.openModal('signup');
+        }
+    }
+
     render () {
-        const { events, groups, users } = this.props;
+        const { events, groups, users, currentUser } = this.props;
         const event = events.find(event => event.id === Number(this.eventId))
         if (!event) return null;
         if (!event.startTime) return null;
         const eventCreator = users.find(user => user.id === event.creatorId);
         const eventGroup = groups.find(group => group.id === event.groupId);
-        const eventAttendees = users.filter(user => event.attendees.includes(user.id))
+        const eventAttendees = users.filter(user => event.attendees.includes(user.id));
+        const attending = event.attendees.includes(currentUser.id)
         return (
             <div className="event-show-page">
                 <div className="event-show-top">
@@ -31,7 +50,7 @@ class EventShow extends React.Component {
                             <div className="host-info">
                                 <span>Hosted by </span>
                                 <span className="hosts">
-                                    {eventCreator ? eventCreator.username + "and": null}
+                                    {eventCreator ? eventCreator.username + " and ": null}
                                      {eventGroup.title}</span>
                             </div>
                         </div>
@@ -85,8 +104,9 @@ class EventShow extends React.Component {
                             </div>
                         </div>
                         <div className="event-attend-edit">
-                            <button className="attend-event">Attend</button>
-                            <button className="edit-event">Edit Event</button>
+                            <button className="attend-event" onClick={() => this.attend(attending, event)}>
+                                {attending ? "Can't Go" : "Attend"}</button>
+                            {this.editEvent(eventCreator.id, currentUser.id)}
                         </div>
                     </div>
                 </div>

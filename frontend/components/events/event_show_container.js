@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import EventShow from "./event_show";
-import { fetchEvent } from "../../actions/event_actions";
+import { openModal } from "../../actions/modal_actions";
+import { fetchEvent, createRsvp, deleteRsvp } from "../../actions/event_actions";
 
 const mapStateToProps = (state) => {
     return {
@@ -11,7 +12,10 @@ const mapStateToProps = (state) => {
 }}
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchEvent: (eventId) => dispatch(fetchEvent(eventId))
+    fetchEvent: (eventId) => dispatch(fetchEvent(eventId)),
+    createRsvp: (eventId) => dispatch(createRsvp(eventId)),
+    deleteRsvp: (eventId) => dispatch(deleteRsvp(eventId)),
+    openModal: modal => dispatch(openModal(modal))
 })
 
 
