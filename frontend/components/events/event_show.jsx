@@ -20,7 +20,6 @@ class EventShow extends React.Component {
         }
     }
     attend(attending, event){
-        debugger;
         if (this.props.currentUser.id) {
             attending ?
                 this.props.deleteRsvp(event.id) :
@@ -33,12 +32,15 @@ class EventShow extends React.Component {
     render () {
         const { events, groups, users, currentUser } = this.props;
         const event = events.find(event => event.id === Number(this.eventId))
+
         if (!event) return null;
         if (!event.startTime) return null;
+
         const eventCreator = users.find(user => user.id === event.creatorId);
         const eventGroup = groups.find(group => group.id === event.groupId);
         const eventAttendees = users.filter(user => event.attendees.includes(user.id));
         const attending = event.attendees.includes(currentUser.id)
+        
         return (
             <div className="event-show-page">
                 <div className="event-show-top">
