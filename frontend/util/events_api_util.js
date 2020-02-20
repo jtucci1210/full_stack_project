@@ -48,18 +48,18 @@ export const deleteEvent = (eventId) => (
     })
 );
 
-export const updateEvent = (data) => (
+export const updateEvent = (event) => (
     $.ajax({
         method: 'PATCH',
-        url: `api/events/${data.id}`,
-        data: { data }
+        url: `api/events/${event.id}`,
+        data: { event }
     })
 );
 
-export const createEvent = (data) => (
+export const createEvent = (event) => (
     $.ajax({
         method: 'POST',
         url: `api/events/`,
-        data: { data }
+        data: { event }
     })
 );

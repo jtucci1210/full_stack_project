@@ -17,7 +17,7 @@
 #
 
 class Event < ApplicationRecord
-    validates :group_id, :creator_id, :description, :venue_location, presence: true
+    validates :group_id, :description, :venue_location, presence: true
     validates :start_time, :end_time, :date, :cost, presence: true 
     validates :name, presence: true, uniqueness: true 
 
