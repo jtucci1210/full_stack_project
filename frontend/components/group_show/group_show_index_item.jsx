@@ -18,6 +18,16 @@ class GroupShowIndexItem extends React.Component {
         }
     }
 
+    createEvent(inGroup, currentUser, group) {
+        if (inGroup) {
+            return (
+                <Link to="/events/new">
+                    Create Event
+                </Link>
+            )
+        }
+    }
+
     render () {
         const { group, members, currentUser, deleteMembership, createMembership } = this.props;
         const inGroup = members.map(member => (member.id)).includes(currentUser.id)
@@ -49,6 +59,9 @@ class GroupShowIndexItem extends React.Component {
                         <button onClick={() => this.joinGroup(inGroup, group)}>
                             { inGroup ? "Leave Group" : "Join Group"}
                         </button>
+                    </li>
+                    <li>
+                        {this.createEvent(inGroup, currentUser, group)}
                     </li>
                 </ul>
                 

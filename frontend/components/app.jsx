@@ -10,6 +10,7 @@ import EventShowContainer from "./events/event_show_container";
 import GroupShowContainer from "./group_show/group_show_container";
 import UserShowContainer from './user_profile/user_show_container';
 import SplashContainer from './splash/splash_container';
+import NewEventContainer from './events/new_event_container';
 import Footer from './footer/footer';
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
             <ProtectedRoute exact path="/" component={UserGroupsIndexContainer} />
             <ProtectedRoute exact path="/" component={GroupIndexContainer} />
             <ProtectedRoute exact path="/events" component={EventIndexContainer} />
+            <ProtectedRoute exact path="/events/new" component={NewEventContainer} />
             <UnProtectedRoute exact path="/" component={SplashContainer} />
         <footer>
             <Footer />
