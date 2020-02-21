@@ -15,9 +15,9 @@ const Greeting = ({ currentUser, logout, openModal }) => {
         <hgroup className="header-group-logged-in">
             <Link to="/" className="header-link-explore"><nav>Explore</nav></Link>
             <div className="dropdown">
-                <div onClick={() => dropDownList()} className="dropbtn"> 
+                <div onClick={(e) => dropDownList(e)} className="dropbtn"> 
                     <a className="fas fa-user-circle"></a>
-                    <div id="myDropdown" className="dropdown-content">
+                    <div className="dropdown-content">
                             <Link to={`/users/${currentUser}`}>Profile</Link>
                             <Link onClick={() => logout()} to="/">Logout</Link>
                     </div>
