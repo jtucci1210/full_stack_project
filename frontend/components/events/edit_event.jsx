@@ -5,24 +5,38 @@ class EditEvent extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: this.props.event.name,
-      description: this.props.event.description,
-      venue_location: this.props.event.venueLocation,
-      start_time: this.props.event.startTime,
-      end_time: this.props.event.endTime,
-      cost: this.props.event.cost,
-      date: this.props.event.date,
-      group_id: this.props.event.groupId,
-      id: this.props.event.id
+      name: "",
+      description:"",
+      venue_location: "",
+      start_time: "",
+      end_time: "",
+      cost:"",
+      date:"",
+      group_id: "",
+      id: ""
     };
     this.eventId;
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.eventId = this.props.match.params.eventId;
-    this.props.fetchEvent(this.eventId);
-  }
+    componentDidMount() {
+        this.eventId = this.props.match.params.eventId;
+        this.props.fetchEvent(this.eventId)
+            .then(res => {
+                const { event } = this.props;
+                this.setState({
+                    name: event.name,
+                    description: event.description,
+                    venue_location: event.venueLocation,
+                    start_time: event.startTime,
+                    end_time: event.endTime,
+                    cost: event.cost,
+                    date: event.date,
+                    group_id: event.groupId,
+                    id: event.id
+                })
+            });
+    }
 
   update(field) {
     return e =>

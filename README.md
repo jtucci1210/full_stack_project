@@ -40,6 +40,10 @@ FeetUp is a single page web-app clone of the pre-existing Meetup. Both apps prov
 
 * Because each group, user, and event at some point needs to know the state of their other associated models, it makes designing the backend data being sent tricky. Lots of finessing of reducers and jbuilder data queries were required. One of the more interesting aspects for me, was the creation of custom controller actions and respective routes for the membership and rsvp joins tables. 
 
+![code_snip](app/assets/image/code_snip.png)
+
+* The above code handles some of the nuances of the event edit form. On refresh the component errored out as the event no longer was found in state. This fetches the event and uses a promise to wait for it to be loaded before assigning the event attributes to state. Additionally it destructures the event from props to make the code more legible.
+
 # Future Work to be Done
 
 ## General
