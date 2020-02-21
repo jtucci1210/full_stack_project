@@ -47,15 +47,27 @@
                     width: 200px;
                     height: 100px;
                 }
+                .event-edit-buttons-div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
 
-                .event-submit {
-                    background-color: red;
-                    font-weight: bold;
-                    width: 100px;
-                    height: 33px;
-                    border-radius: 5px;
-                    border: none;
-                    cursor: pointer;
+                    .event-submit {
+                        font-family: sans-serif;
+                        background-color: red;
+                        font-weight: bolder;
+                        width: 90px;
+                        height: 33px;
+                        border-radius: 5px;
+                        border: none;
+                        cursor: pointer;
+                        margin: 5px;
+                        font-size: 11px;
+
+                        .delete {
+                            font-weight: bold;
+                        }
+                    }
                 }
             }
         }

@@ -54,6 +54,11 @@ class EditEvent extends React.Component {
       );
   }
 
+  handleDelete(event) {
+      this.props.deleteEvent(event.id);
+      this.props.history.push(`/groups/${event.groupId}/events`);
+  }
+
   renderErrors() {
     return (
       <ul>
@@ -83,7 +88,6 @@ class EditEvent extends React.Component {
               <input
                 type="text"
                 value={this.state.name}
-                // placeholder={event.name}
                 onChange={this.update("name")}
                 className="event-input"
               />
@@ -91,7 +95,6 @@ class EditEvent extends React.Component {
               <input
                 type="text"
                 value={this.state.venue_location}
-                // placeholder={event.venueLocation}
                 onChange={this.update("venue_location")}
                 className="event-input"
               />
@@ -99,7 +102,6 @@ class EditEvent extends React.Component {
               <input
                 type="text"
                 value={this.state.start_time}
-                // placeholder={event.startTime}
                 onChange={this.update("start_time")}
                 className="event-input"
               />
@@ -107,7 +109,6 @@ class EditEvent extends React.Component {
               <input
                 type="text"
                 value={this.state.end_time}
-                // placeholder={event.endTime}
                 onChange={this.update("end_time")}
                 className="event-input"
               />
@@ -115,7 +116,6 @@ class EditEvent extends React.Component {
               <input
                 type="text"
                 value={this.state.cost}
-                // placeholder={event.cost}
                 onChange={this.update("cost")}
                 className="event-input"
               />
@@ -123,19 +123,21 @@ class EditEvent extends React.Component {
               <input
                 type="date"
                 value={this.state.date}
-                // placeholder={event.date}
                 onChange={this.update("date")}
                 className="event-input"
               />
               <br />
               <textarea
-                // placeholder={event.description}
                 value={this.state.description}
                 onChange={this.update("description")}
                 className="event-description-input"
               />
               <br />
-              <input className="event-submit" type="submit" />
+              <div className="event-edit-buttons-div">
+                <input className="event-submit" type="submit" />
+                <button onClick={() => this.handleDelete(event)}
+                    className="event-submit delete">Delete Event</button>
+              </div>
             </div>
           </form>
         </div>
