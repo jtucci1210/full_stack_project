@@ -7,8 +7,9 @@ Rails.application.routes.draw do
       resources :groups, only: [:index, :remove_group_membership]
       resources :events, only: [:remove_rsvp, :index]
     end
-    resources :events, only: [:create, :index] 
+    resources :events, only: [:create] 
     resources :groups, only: [:index, :show] do 
+      resources :events, only: [:index] 
       post :add, to: 'groups#add_group_membership', as: 'add'
       delete :remove, to: 'groups#remove_group_membership', as: 'remove'
     end

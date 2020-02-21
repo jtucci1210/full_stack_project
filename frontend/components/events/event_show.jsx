@@ -12,10 +12,10 @@ class EventShow extends React.Component {
         this.props.fetchEvent(this.eventId);
     }
 
-    editEvent(host, userId) {
+    editEvent(host, userId, groupId, eventId) {
         if (host === userId) {
             return (
-                <button className="edit-event">Edit Event</button>
+                <Link to={`/${groupId}/events/${eventId}/edit`} className="edit-event">Edit Event</Link>
             )
         }
     }
@@ -108,7 +108,7 @@ class EventShow extends React.Component {
                         <div className="event-attend-edit">
                             <button className="attend-event" onClick={() => this.attend(attending, event)}>
                                 {attending ? "Can't Go" : "Attend"}</button>
-                            {this.editEvent(eventCreator.id, currentUser.id)}
+                            {this.editEvent(eventCreator.id, currentUser.id, eventGroup.id, event.id)}
                         </div>
                     </div>
                 </div>

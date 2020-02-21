@@ -1,6 +1,4 @@
 import React from 'react';
-import TinyDatePicker from "tiny-date-picker";
-import { Link } from 'react-router-dom';
 
 
 class NewEvent extends React.Component {

@@ -27,7 +27,7 @@ class Event < ApplicationRecord
     foreign_key: :creator_id,
     class_name: :User
 
-    has_many :rsvps, dependent: :destroy
+    has_many :rsvps, dependent: :destroy,
     foreign_key: :event_id,
     class_name: :Rsvp
 

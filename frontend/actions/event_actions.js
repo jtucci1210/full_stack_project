@@ -62,3 +62,9 @@ export const createEvent = (data) => dispatch => {
         .then(payload => dispatch(receiveEvent(payload)))
         
 }
+
+export const updateEvent = (data) => dispatch => {
+    return eventAPIUtil.updateEvent(data)
+        .then(payload => dispatch(receiveEvent(payload)))
+        
+}

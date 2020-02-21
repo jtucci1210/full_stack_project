@@ -9,5 +9,10 @@ menu, ul, ol {
     background: transparent;
     font-family: inherit;
     text-decoration: none;
+    
+}
+
+button:focus {
+    outline: lightgrey solid;
 }
 
