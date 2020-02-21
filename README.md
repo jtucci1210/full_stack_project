@@ -32,6 +32,7 @@ FeetUp is a single page web-app clone of the pre-existing Meetup. Both apps prov
 ## Events
 
 * A group can host events that their members can sign up for via an RSVP. 
+* Group's members can create events, and edit or delete events they have made.
 * After signing up, users can also change their mind and cancel their RSVP.
 
 ![event_join](app/assets/images/event_join.png)
@@ -54,7 +55,3 @@ FeetUp is a single page web-app clone of the pre-existing Meetup. Both apps prov
 
 * Add full C.R.U.D. functionality to allow users to create and update groups, rather than just sign up or leave a pre-existing one. 
 * Add subject tags to groups to allow users to search for groups based on interests.
-
-## Events
-
-* Add full C.R.U.D. functionality to allow users to create and update events (specifically only events for groups they are a part of), rather than just sign up or leave a pre-existing one.
