@@ -29,3 +29,30 @@
         }
     }
 }
+
+.groups-or-event-div {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+
+    .nav-to-groups {
+        border: white solid 1px;
+        padding: 10px;
+        border-radius: 5px;
+        &:hover{
+            background-color: grey;
+        }
+    }
+    .nav-to-events {
+        border: white solid 1px;
+        padding: 10px;
+        border-radius: 5px;
+        margin-left: 30px;
+        &:hover{
+            background-color: grey;
+            
+        }
+    }
+}

@@ -9,6 +9,14 @@ class UserGroupsIndex extends React.Component {
     componentDidMount () {
         this.props.fetchAllGroups();
     }
+    groupOrEvents() {
+        return (
+            <div className="groups-or-event-div">
+                <Link to="/" className="nav-to-groups">Groups</Link>
+                <Link to="/events" className="nav-to-events">Events</Link>
+            </div>
+        );
+    }
 
     render () {
         const { currentUser, groups, events } = this.props;
@@ -24,6 +32,7 @@ class UserGroupsIndex extends React.Component {
                             <h2>Find your next event</h2>
                             <span>{currentUser.events.length} events in your groups</span>
                             <span>{events.length} events near you</span>
+                            {this.groupOrEvents()}
                         </div>
                     </Link>
                 </div>

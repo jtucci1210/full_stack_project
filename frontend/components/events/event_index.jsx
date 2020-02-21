@@ -28,6 +28,14 @@ class EventIndex extends React.Component {
             </Link>
         )
     }
+    groupOrEvents() {
+        return (
+          <div className="groups-or-event-div">
+            <Link to="/" className="nav-to-groups">Groups</Link>
+            <Link to="/events" className="nav-to-events">Events</Link>
+          </div>
+        );
+    }
 
     render() {
         const { currentUser, groups, events } = this.props;
@@ -43,6 +51,7 @@ class EventIndex extends React.Component {
                             <h2>Join your next group</h2>
                             <span>You belong to {currentUser.groups.length} groups</span>
                             <span>{groups.length} groups near you</span>
+                            {this.groupOrEvents()}
                         </div>
                     </Link>
                 </div>
