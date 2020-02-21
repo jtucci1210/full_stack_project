@@ -15,10 +15,11 @@ export const receiveEventErrors = (errors) => ({
     errors
 }) 
 
-export const receiveEvent = (payload) => ({
+export const receiveEvent = (payload) => {
+    return {
     type: RECEIVE_EVENT,
     payload: payload
-}) 
+}}
 
 export const fetchAllEvents = () => dispatch => (
     eventAPIUtil.fetchAllEvents()
@@ -56,7 +57,8 @@ export const deleteEvent = (eventId) => dispatch => (
         .then(group => dispatch(receiveEvent(group)))
 )
 
-export const createEvent = (data) => dispatch => (
-    eventAPIUtil.createEvent(data)
+export const createEvent = (data) => dispatch => {
+    return eventAPIUtil.createEvent(data)
         .then(payload => dispatch(receiveEvent(payload)))
-)
+        
+}

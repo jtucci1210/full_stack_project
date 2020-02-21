@@ -37,7 +37,9 @@ class NewEvent extends React.Component {
         e.preventDefault();
         const event = Object.assign({}, this.state);
         this.props.createEvent(event)
-            .then(<Link to={`/events/${event.id}`}></Link>)
+            .then(res => 
+                this.props.history.push(`/events/${Object.keys(res.payload.events)[0]}`
+            ))
     }
 
     renderErrors() {
@@ -55,77 +57,78 @@ class NewEvent extends React.Component {
     render(){
 
         return (
-            <div className="new-event-page">
-                <img
-                    className="new-event-image"
-                    src="https://feetup-seeds.s3-us-west-1.amazonaws.com/splash_image.jpg"
-                    alt=""
-                />
-                <form onSubmit={this.handleSubmit} className="event-form-box">
-                    <h2>Create a New Event</h2>
-                    <div className="event-errors">{this.renderErrors()}</div>
-                    <div className="event-form">
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.name}
-                            placeholder="Event name"
-                            onChange={this.update("name")}
-                            className="event-input"
-                        />
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.venue_location}
-                            placeholder="Event location"
-                            onChange={this.update("venue_location")}
-                            className="event-input"
-                        />
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.start_time}
-                            placeholder="Event start time"
-                            onChange={this.update("start_time")}
-                            className="event-input"
-                        />
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.end_time}
-                            placeholder="Event end time"
-                            onChange={this.update("end_time")}
-                            className="event-input"
-                        />
-                        <br />
-                        <input
-                            type="text"
-                            value={this.state.cost}
-                            placeholder="Event cost"
-                            onChange={this.update("cost")}
-                            className="event-input"
-                        />
-                        <br />
-                        <input
-                            type="date"
-                            value={this.state.date}
-                            placeholder="Event date"
-                            onChange={this.update("date")}
-                            className="event-input"
-                        />
-                        <br />
-                        <textarea
-                            placeholder="Description"
-                            value={this.state.description}
-                            onChange={this.update("description")}
-                            className="event-description-input"
-                        />
-                        <br/>
-                        <input className="event-submit" type="submit"/>
-
-                    </div>
-                </form>
+          <div className="new-event-page">
+            <div className="form-img-container">
+              <img
+                className="new-event-image"
+                src="https://feetup-seeds.s3-us-west-1.amazonaws.com/splash_image.jpg"
+                alt=""
+              />
+              <form onSubmit={this.handleSubmit} className="event-form-box">
+                <h2>Create a New Event</h2>
+                <div className="event-errors">{this.renderErrors()}</div>
+                <div className="event-form">
+                  <br />
+                  <input
+                    type="text"
+                    value={this.state.name}
+                    placeholder="Event name"
+                    onChange={this.update("name")}
+                    className="event-input"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    value={this.state.venue_location}
+                    placeholder="Event location"
+                    onChange={this.update("venue_location")}
+                    className="event-input"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    value={this.state.start_time}
+                    placeholder="Event start time"
+                    onChange={this.update("start_time")}
+                    className="event-input"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    value={this.state.end_time}
+                    placeholder="Event end time"
+                    onChange={this.update("end_time")}
+                    className="event-input"
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    value={this.state.cost}
+                    placeholder="Event cost"
+                    onChange={this.update("cost")}
+                    className="event-input"
+                  />
+                  <br />
+                  <input
+                    type="date"
+                    value={this.state.date}
+                    placeholder="Event date"
+                    onChange={this.update("date")}
+                    className="event-input"
+                  />
+                  <br />
+                  <textarea
+                    placeholder="Description"
+                    value={this.state.description}
+                    onChange={this.update("description")}
+                    className="event-description-input"
+                  />
+                  <br />
+                  <input className="event-submit" type="submit" />
+                </div>
+              </form>
             </div>
+          </div>
         );
     }
 }
