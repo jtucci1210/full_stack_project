@@ -25,7 +25,7 @@ class EventShow extends React.Component {
                 this.props.deleteRsvp(event.id) :
                 this.props.createRsvp(event.id)
         } else {
-            this.props.openModal('signup');
+            this.props.openModal('login');
         }
     }
 

@@ -27,14 +27,12 @@ class UserGroupsIndex extends React.Component {
         return (
             <div>
                 <div className="user-groups-infobar">
-                    <Link to="/events">
-                        <div className="user-groups-infobar-content">
-                            <h2>Find your next event</h2>
-                            <span>{currentUser.events.length} events in your groups</span>
-                            <span>{events.length} events near you</span>
-                            {this.groupOrEvents()}
-                        </div>
-                    </Link>
+                    <div className="user-groups-infobar-content">
+                        <h2>Find your next event</h2>
+                        <span>{currentUser.events.length} events in your groups</span>
+                        <span>{events.length} events near you</span>
+                        {this.groupOrEvents()}
+                    </div>
                 </div>
                 <div className="user-groups-container">
                     <div className="user-groups-index">

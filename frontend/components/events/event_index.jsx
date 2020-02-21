@@ -46,14 +46,12 @@ class EventIndex extends React.Component {
         return (
             <div>
                 <div className="user-groups-infobar">
-                    <Link to="/">
-                        <div className="user-groups-infobar-content">
-                            <h2>Join your next group</h2>
-                            <span>You belong to {currentUser.groups.length} groups</span>
-                            <span>{groups.length} groups near you</span>
-                            {this.groupOrEvents()}
-                        </div>
-                    </Link>
+                    <div className="user-groups-infobar-content">
+                        <h2>Join your next group</h2>
+                        <span>You belong to {currentUser.groups.length} groups</span>
+                        <span>{groups.length} groups near you</span>
+                        {this.groupOrEvents()}
+                    </div>
                 </div>
                 <div className="user-groups-container">
                     <div className="user-groups-index">

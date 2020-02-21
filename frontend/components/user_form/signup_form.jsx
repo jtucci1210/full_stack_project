@@ -11,12 +11,22 @@ class SignupForm extends React.Component {
             location: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
+
     }
 
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+    handleDemo(e) {
+        let demoUser = {
+            email: "demo@gmail.com",
+            password: "123456"
+        };
+        this.setState(demoUser)
+        this.props.login(demoUser).then(this.props.closeModal);
     }
 
     handleSubmit(e) {
@@ -88,7 +98,10 @@ class SignupForm extends React.Component {
                                 </select>
                         </label>
                         <br />
-                        <input className="signup-submit" type="submit" value={this.props.formType} />
+                        <div className="session-buttons-div">
+                            <input className="signup-submit" type="submit" value={this.props.formType} />
+                            <input onClick={this.handleDemo} className="login-demo-user" type="submit" value="Demo" />
+                        </div>
                     </div>
                 </form>
             </div>

@@ -14,7 +14,7 @@ class GroupShowIndexItem extends React.Component {
                 this.props.deleteMembership(group.id) :
                 this.props.createMembership(group.id)
         } else {
-            this.props.openModal('signup');
+            this.props.openModal('login');
         }
     }
 
